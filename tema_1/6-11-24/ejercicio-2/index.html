@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Título -->
+    <header>
+      <h1 class="title-header">EJERCICIO 2: INTEGRA 7 ELEMENTOS HTML</h1>
+    </header>
+    <!-- Contenido principal de nuestra web-->
+    <main>
+      <section class="main-container">
+        <!-- Elemento 1 -->
+        <div class="card section-1">
+          <h2 class="title-card">Botones</h2>
+          <p class="text-card">
+            Son útiles para realizar acciones específicas, como enviar un
+            formulario, ejecutar scripts, o interactuar con el usuario.
+          </p>
+          <button>Boton</button>
+        </div>
+        <!-- Elemento 2 -->
+        <div class="card section-2">
+          <h2 class="title-card">Inputs</h2>
+          <p class="text-card">
+            Se utiliza para crear controles interactivos dentro de formularios,
+            como campos de texto, botones de opción, casillas de verificación,
+            entre otros. Es un elemento versátil que admite varios tipos de
+            entrada
+          </p>
+          <input type="text" />
+        </div>
+        <!-- Elemento 3 -->
+        <div class="card section-3">
+          <h2 class="title-card">Area de texto</h2>
+          <p class="text-card">
+            se utiliza para crear un área de texto multilínea, donde el usuario
+            puede ingresar más de una línea de texto. Es comúnmente utilizado en
+            formularios cuando se necesita permitir a los usuarios escribir
+            respuestas largas, comentarios o descripciones.
+          </p>
+          <textarea name="area-example" id="input-text-card"></textarea>
+        </div>
+        <!-- Elemento 4 -->
+        <div class="card section-3">
+          <h2 class="title-card">Iconos</h2>
+          <p class="text-card">
+            No son un "elemento HTML" en sí, sino que son representados a través
+            de etiquetas como <"i">, <"span">, o <"svg">, y su visualización es
+            controlada mediante bibliotecas de íconos como Font Awesome o
+            Material Icons.
+          </p>
+          <i class="fa-solid fa-download"></i>
+          <i class="fa-regular fa-comment"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <!-- Elemento 5 -->
+        <div class="card section-3">
+          <h2 class="title-card">Check boxes</h2>
+          <p class="text-card">
+            Es un elemento que permite a los usuarios seleccionar una o más
+            opciones en un formulario.
+          </p>
+          <input type="checkbox" />
+        </div>
+        <!-- Elemento 6 -->
+        <div class="card section-3">
+          <h2 class="title-card">Selectores</h2>
+          <p class="text-card">
+            Se utiliza para crear menús desplegables en formularios, permitiendo
+            que los usuarios elijan entre varias opciones.
+          </p>
+          <select name="select-example" id="input-select-card">
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+          </select>
+        </div>
+        <!-- Elemento 7 -->
+        <div class="card section-3">
+          <h2 class="title-card">Rangos</h2>
+          <p class="text-card">
+            Se utiliza para crear un control deslizante (slider) que permite a
+            los usuarios seleccionar un valor dentro de un rango especificado.
+            Este tipo de entrada es útil cuando deseas que el usuario elija un
+            valor numérico dentro de un intervalo de forma interactiva, como el
+            ajuste de volumen, brillo o un valor de puntaje.
+          </p>
+          <input type="range" />
+        </div>
+        <!-- Elemento 8 -->
+        <div class="card section-3">
+          <h2 class="title-card">Listas</h2>
+          <p class="text-card">
+            Permiten estructurar contenido en forma de puntos o pasos numerados,
+            lo que resulta útil para organizar información de manera clara.
+          </p>
+          <div class="list-container">
+            <div class="list-type list-ol">
+              <h3>Ordenadas</h3>
+              <ol>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+              </ol>
+            </div>
+            <div class="list-type list-ul">
+              <h3>Desordenadas</h3>
+              <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li>Elemento 4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

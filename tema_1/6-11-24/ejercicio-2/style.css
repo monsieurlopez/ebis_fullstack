@@ -1,0 +1,50 @@
+header {
+    text-align: center;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    text-align: center;
+    border: 0.1rem solid grey;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    width: 50%;
+    max-width: 450px;
+    min-width: 150px;
+}
+
+.title-card {
+    border-radius: 1rem;
+    color: white;
+    background-color: grey;
+    padding: 0.5rem;
+}
+
+.img-card {
+    border: 0.1rem solid grey;
+    border-radius: 1rem;
+    width: auto;
+    height: auto;
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-type {
+    border: 0.1rem solid grey;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: grey;
+    color: white;
+}
