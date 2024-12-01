@@ -159,3 +159,30 @@ header {
 }
 
 /* Section 4 */
+
+.section-4 {
+    background-color: rgba(0, 0, 0, 0.856);
+    padding: 1.5rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    width: 40%;
+    color: white;
+}
+
+.description-dialog {
+    margin: 0 0 1rem 0;
+    color: grey;
+}
+
+.buttons-dialog {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+.button-accept,
+.button-reject {
+  background-color: inherit; /* Usa el mismo fondo que la sección */
+  color: #a084b9de; /* Color lila para el texto */
+  cursor: pointer;
+}
