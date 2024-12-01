@@ -19,3 +19,7 @@ h2 {
     border: 0.1rem solid rgb(201, 231, 235);
     border-radius: 1rem;
 }
+
+.country {
+    font-style: oblique;
+}
