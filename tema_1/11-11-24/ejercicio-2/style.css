@@ -1,0 +1,21 @@
+header {
+    text-align: center;
+    background-color: rgb(201, 231, 235);
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h2 {
+    background-color: rgb(201, 231, 235);
+}
+
+.article {
+    padding: 1rem;
+    border: 0.1rem solid rgb(201, 231, 235);
+    border-radius: 1rem;
+}
