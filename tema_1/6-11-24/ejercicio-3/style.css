@@ -61,17 +61,23 @@ header {
     padding: 0.5rem;
     margin-bottom: 1rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    column-count: 2;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
 }
 
 .img-supermarket {
-    flex: 0 0 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
-    max-width: 100%;
     height: auto;
     object-fit: contain;
 }
@@ -82,8 +88,8 @@ header {
 }
 
 .description-supermarket {
-    flex: 0 0 60%;
     column-count: 1;
+    grid-template-columns: 1 column;
     padding: 0.5rem;
     font-size: 1rem;
 }
@@ -100,3 +106,56 @@ header {
     padding: 0.3rem;
     cursor: pointer;
 }
+
+/* Section 3 */
+.section-3 {
+    background-color: black;
+    padding: 2.5rem;
+    margin: 1rem;
+    color: white;
+}
+
+.container-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .container-main {
+        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container-main {
+        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.description-card {
+    margin: 0 0 0 0.5rem;
+}
+
+.target-card {
+    display: flex;
+    flex-wrap: column;
+}
+
+.title-card {
+    margin: 0 0 0.5rem 0;
+}
+.text-card {
+    font-size: small;
+    color: grey;
+    margin: 0rem;
+}
+
+.fa-circle-info {
+    color: white;
+}
+
+/* Section 4 */

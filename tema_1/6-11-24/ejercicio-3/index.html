@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
+    <title>Estructuras</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Título -->
@@ -13,7 +17,7 @@
     </header>
     <!-- Contenido principal de nuestra web-->
     <main class="main-container">
-      <!-- Estructura numero 1 -->
+      <!-- Estructura número 1 -->
       <section class="section-1">
         <h3 class="title-structure">Follow the latest trends</h3>
         <p class="description-structure">With our daily newslatter</p>
@@ -26,18 +30,23 @@
           <button class="button-submit-section-1" type="submit">Submit</button>
         </div>
       </section>
-      <!-- Estructura numero 2 -->
+      <!-- Estructura número 2 -->
       <section class="section-2">
         <h1>Supermercados</h1>
         <h3 class="subHeading-section">
           Top 3 mejores supermercados de España
         </h3>
+        <!-- Tarjeta 1 -->
         <article class="card article-1">
+          <!-- Imagen -->
           <div class="img-supermarket">
             <img src="./assets/mercadona.png" alt="Logo Mercadona" />
           </div>
+          <!-- Descripción -->
           <div class="description-supermarket">
+            <!-- Nombre supermercado -->
             <h3 class="title-supermarket">Mercadona</h3>
+            <!-- Texto resumen supermercado -->
             <p class="text-supermarket">
               Desde 1993 Mercadona basa todas sus decisiones en su Modelo de
               Calidad Total que busca satisfacer por igual y con la misma
@@ -45,6 +54,7 @@
               internamente denomina al cliente, El Trabajador, El Proveedor, La
               Sociedad y El Capital.
             </p>
+            <!-- Boton con acceso al sitio web del supermercado -->
             <button
               class="button-link"
               type="button"
@@ -55,6 +65,7 @@
             </button>
           </div>
         </article>
+        <!-- Tarjeta 2 -->
         <article class="card article-2">
           <div class="img-supermarket">
             <img src="./assets/carrefour.webp" alt="Logo Carrefour" />
@@ -78,6 +89,7 @@
             </button>
           </div>
         </article>
+        <!-- Tarjeta 3 -->
         <article class="card article-3">
           <div class="img-supermarket">
             <img src="./assets/lidl.jpg" alt="Logo Lidl" />
@@ -101,7 +113,137 @@
           </div>
         </article>
       </section>
-      <section class="section-3"></section>
+      <!-- Estructura número 3 -->
+      <section class="section-3">
+        <!-- Título de la estructura -->
+        <h1>Lenguajes de Programacion</h1>
+        <!-- Subtítulo -->
+        <h3 class="subHeading-section">
+          Listado de lenguajes con una pequeña descripcion y un link a su sitio
+          web
+        </h3>
+        <!-- Contenedor con todas las tarjetas -->
+        <article class="container-main">
+          <!-- Contenedor de la tarjeta -->
+          <div class="target-card card-1">
+            <!-- Icono de la tarjeta -->
+            <div class="icon-card">
+              <!-- Enlace del icono al sitio web correspondiente -->
+              <a
+                href="https://developer.mozilla.org/fr/docs/Web/JavaScript"
+                target="_blank"
+                title="Enlace a la web de JavaScript"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <!-- Descripción de la tarjeta -->
+            <div class="description-card">
+              <h4 class="title-card">JavaScript</h4>
+              <p class="text-card">
+                Un lenguaje de programación usado para desarrollar aplicaciones
+                web dinámicas y añadir interactividad a páginas web.
+              </p>
+            </div>
+          </div>
+
+          <div class="target-card card-2">
+            <div class="icon-card">
+              <a
+                href="https://www.java.com/es/"
+                target="_blank"
+                title="Enlace a la web de Java"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <div class="description-card">
+              <h4 class="title-card">Java</h4>
+              <p class="text-card">
+                Un lenguaje de programación orientado a objetos, conocido por su
+                portabilidad y usado para desarrollar aplicaciones móviles, web,
+                y de escritorio.
+              </p>
+            </div>
+          </div>
+          <div class="target-card card-3">
+            <div class="icon-card">
+              <a
+                href="https://www.python.org/"
+                target="_blank"
+                title="Enlace a la web de Python"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <div class="description-card">
+              <h4 class="title-card">Python</h4>
+              <p class="text-card">
+                Un lenguaje de programación versátil y fácil de aprender,
+                popular en desarrollo web, ciencia de datos, inteligencia
+                artificial y automatización.
+              </p>
+            </div>
+          </div>
+          <div class="target-card card-4">
+            <div class="icon-card">
+              <a
+                href="https://www.php.net/"
+                target="_blank"
+                title="Enlace a la web de PHP"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <div class="description-card">
+              <h4 class="title-card">PHP</h4>
+              <p class="text-card">
+                Un lenguaje de programación para el desarrollo web del lado del
+                servidor, ampliamente usado para crear páginas dinámicas y
+                gestionar bases de datos.
+              </p>
+            </div>
+          </div>
+          <div class="target-card card-5">
+            <div class="icon-card">
+              <a
+                href="https://learn.microsoft.com/es-es/dotnet/csharp/tour-of-csharp/"
+                target="_blank"
+                title="Enlace a la web de C#"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <div class="description-card">
+              <h4 class="title-card">C#</h4>
+              <p class="text-card">
+                Un lenguaje de programación orientado a objetos desarrollado por
+                Microsoft, utilizado principalmente para aplicaciones Windows,
+                videojuegos y desarrollo en la plataforma .NET.
+              </p>
+            </div>
+          </div>
+          <div class="target-card card-6">
+            <div class="icon-card">
+              <a
+                href="https://sql.sh/"
+                target="_blank"
+                title="Enlace a la web de SQL"
+              >
+                <i class="fa-solid fa-circle-info"></i
+              ></a>
+            </div>
+            <div class="description-card">
+              <h4 class="title-card">SQL</h4>
+              <p class="text-card">
+                Un lenguaje de consulta estructurado para gestionar y manipular
+                bases de datos relacionales.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- Estructura número 3 -->
       <section class="section-4"></section>
     </main>
   </body>
