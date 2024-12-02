@@ -4,5 +4,5 @@
 
 Repository created to manage all the exercises completed during the training program.
 
-Unit 1: Programming methodology
-Unit 2: HTML and Web Architecture
+<strong>Unit 1:</strong> Programming methodology </br>
+<strong>Unit 2:</strong> HTML and Web Architecture </br>
