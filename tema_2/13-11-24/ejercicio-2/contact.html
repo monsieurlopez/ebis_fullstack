@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Ejercicio 2 - Contact</title>
+  </head>
+  <body>
+    <header>
+      <section class="section-header">
+        <h1>CONTACT</h1>
+        <nav class="navbar">
+          <a href="./index.html"> Home </a>
+          <a href="./services.html"> Servicios </a>
+          <a href="./contact.html"> Contacto </a>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <section class="section section-hours">
+        <h2>Ven a conocernos</h2>
+        <p class="text-contact">
+          ¡Nos encantaría conocerte en persona! Puedes
+          visitarnos directamente en nuestras oficinas. Estamos aquí para
+          recibirte, responder tus preguntas y brindarte la atención que mereces
+        </p>
+        <dl class="list-info">
+          <dt><strong> Horario </strong></dt>
+          <dd>Lunes a Viernes de 9h00 - 18h00</dd>
+          <br />
+          <dt><strong> Dirección </strong></dt>
+          <dd>Calle Inventada n° 123, 28800, Ciudad Imaginaria (Madrid)</dd>
+          <br />
+          <dt><strong> Telefono </strong></dt>
+          <dd>+34 123 456 789</dd>
+          <br />
+          <dt><strong> Email </strong></dt>
+          <dd>sueñodetubebe@info.com</dd>
+        </dl>
+      </section>
+      <section class="section section-form">
+        <h2>Enviar un mensaje</h2>
+        <p class="text-contact">
+          ¡Nos encantaría saber de ti! Si tienes preguntas, necesitas más
+          información o simplemente quieres saludarnos, no dudes en escribirnos.
+          Completa el formulario a continuación y nos pondremos en contacto
+          contigo lo antes posible. ¡Estamos aquí para ayudarte!
+        </p>
+        <form action="" name="form-contact">
+          <div class="form-data">
+            <input type="text" placeholder="Nombre" required />
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-data">
+            <input type="tel" placeholder="Telefono" />
+            <select name="subject" id="subject-form" required>
+              <option value="subject1">Taller online</option>
+              <option value="subject2">Taller presencial</option>
+              <option value="subject3">Tarifas</option>
+              <option value="subject4">Asesoria Personalizada</option>
+              <option value="subject4">Otros</option>
+            </select>
+          </div>
+          <div class="form-data">
+            <textarea placeholder="Mensaje"></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
