@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <header class="section-header">
+      <h1>FORMULARIO HTML</h1>
+    </header>
+    <main>
+      <section class="section-form">
+        <p>Los campos marcados con un * son obligatorios</p>
+        <form action="">
+          <div class="form-data">
+            <label for="name">Nombre:* </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Escribe tu nombre"
+              required
+            />
+          </div>
+          <div class="form-data">
+            <label for="lastname">Apellidos:* </label>
+            <input
+              type="text"
+              id="lastname"
+              placeholder="Escribe tus apellidos"
+              required
+            />
+          </div>
+          <div class="form-data">
+            <label for="date">Fecha de la reserva:* </label>
+            <input
+              type="date"
+              id="date"
+              placeholder="Selecciona una fecha"
+              required
+            />
+          </div>
+          <div class="form-data">
+            <label for="checkbox">Acepta terminos y condiciones:* </label>
+            <input
+              type="checkbox"
+              id="checkbox"
+              placeholder="Acepta terminos y condiciones"
+              onclick="window.location.href='https://www.google.com/'"
+              target="_blank"
+              required
+            />
+          </div>
+          <div><button type="submit" class="button-submit">Enviar</button></div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

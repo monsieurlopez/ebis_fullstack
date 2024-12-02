@@ -1,0 +1,64 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #c6e7e2;
+}
+.section-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem;
+    background-color: #c6e7e2;
+    border-bottom: black solid 0.1rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+h1, p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.section-form {
+    padding: 2.5rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: black solid 0.1rem;
+}
+
+.form-data {
+    width: 100%;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.button-submit {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.button-submit:hover {
+    background-color: black;
+    border-color: black;
+}
+
+
+
