@@ -100,4 +100,50 @@ h1, h2 {
 }
 
 /* Elemento 4 */
+.element-4 {
+    border: 0.1rem solid #333;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.header-card {
+    padding: 0.7rem;
+    text-align: start;
+    background-color: #333;
+    color: white;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.body-card {
+    height: 18rem;
+    width: 20rem;
+}
+
+.footer-card {
+    padding: 0.7rem;
+    border-top: 0.1rem solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.input-text {
+    border: white;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+
+.button-send {
+    padding: 0.3rem 0.7rem 0.3rem 0.8rem;
+    color: white;
+    background-color: #333;
+    font-weight: lighter;
+    font-size: medium;
+    cursor: pointer;
+}
 
