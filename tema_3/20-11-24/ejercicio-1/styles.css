@@ -1,0 +1,103 @@
+/* Estilos comunes */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem;
+    background-color: #0d0e0d;
+    color: rgb(154, 196, 233);
+}
+
+body {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+}
+
+/* Elemento 1*/
+.section-1  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.2rem;
+    background-color: black;
+}
+
+.img-1 {
+    border: 0.2rem solid rgb(163, 145, 41);
+    border-radius: 1.2rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    color: rgb(163, 145, 41);
+    background-color: black;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.text-1 {
+    color: rgb(163, 145, 41);
+    font-weight: bold;
+}
+
+.fa-triangle-exclamation {
+    color: red;
+    font-size: 1.5rem;
+}
+
+/* Elemento 2*/
+.section-2 {
+    padding: 0.2rem;
+    background-color: black;
+}
+
+.img-2 {
+    border: 0.2rem solid #fff;
+    background-color: #222229;
+    color: #fff;
+    padding: 0.8rem 1.8rem 0.6rem 1.8rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
+
+/* Elemento 3 */
+.section-3 {
+    padding: 0.2rem;
+    background-color: black;
+}
+
+.img-3 {
+    border: 0.2rem solid blue;
+    border-radius: 0.3rem;
+    background-image: linear-gradient(#3470fa, #313ed7);
+    color: #fff;
+    padding: 0.9rem 1.6rem 0.9rem 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.bi-pencil {
+    background-color: transparent;
+    color: white;
+}
+
+/* Elemento 4 */
+
