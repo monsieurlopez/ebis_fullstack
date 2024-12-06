@@ -156,6 +156,25 @@ footer {
   padding: 0rem 0rem 0rem 0.2rem;
 }
 
+/* Buttons */
+button {
+  font-size: 22px;
+  font-weight: regular;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 1.5rem;
+  letter-spacing: -0.1rem;
+}
+
+.button-section-2 {
+  background-color: #d9d9d9;
+}
+
+.button-section-3 {
+  background-color: #0b0514;
+  color: #d9d9d9;
+  border: #d9d9d9 0.1rem solid;
+}
+
 
 /* Media Query para dispositivos de 576px o menos */
 @media (max-width: 768px) {
@@ -231,5 +250,11 @@ footer {
 
   .article-section-3 p {
     font-size: 16px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    letter-spacing: -0.1rem;
   }
 }
