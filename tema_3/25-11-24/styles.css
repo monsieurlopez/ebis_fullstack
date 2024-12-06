@@ -1,154 +1,235 @@
 html {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 body {
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    background-color: #0B0514;
-    font-family: 'Kantumruy Pro', sans-serif;
-    font-size: 32px;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  background-color: #0b0514;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 32px;
 }
 
-header, footer {
-    margin: 0rem auto;
-    background-color: #D9D9D9;
-    position: fixed;
-    width: 100%;
+header,
+footer {
+  margin: 0rem auto;
+  background-color: #d9d9d9;
+  position: fixed;
+  width: 100%;
 }
 
 .header-section {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: 5rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 5rem;
 }
 
-.title-header, .title-footer {
-    color: #0B0514;
-    font-size: 32px;
+.title-header,
+.title-footer {
+  color: #0b0514;
+  font-size: 32px;
 }
 
 header {
-    text-align: start;
-    top: 0px;
-    left: 0px;
+  text-align: start;
+  top: 0px;
+  left: 0px;
 }
 
 footer {
-    text-align: center;
-    bottom: 0px;
-    left: 0px;
-    height: 5rem;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  height: 5rem;
 }
 
 .section {
-    width: 70rem;
-    margin: 0rem auto;
+  width: 70rem;
+  margin: 0rem auto;
 }
 
 /* Section 1 */
 .section-1 {
-    margin: 9rem auto 4rem auto;
-    background-color: #0B0514;
-    line-height: 7rem;
+  margin: 9rem auto 4rem auto;
+  background-color: #0b0514;
+  line-height: 7rem;
 }
 
 .title {
-    color: white;
-    font-size: 128px;
-    font-weight: bold;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
+  color: white;
+  font-size: 128px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 .text-info {
-    color: #D9D9D9;
-    font-size: 28px;
-    font-weight: regular;
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
+  color: #d9d9d9;
+  font-size: 28px;
+  font-weight: regular;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Section 2 */
 .section-2 {
-    background-color: #D9D9D9;
-    margin: 4rem auto;
-    text-align: center;
-    padding: 3rem;
+  background-color: #d9d9d9;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 3rem;
 }
 
 .header-section-2 {
-    text-align: start;
+  text-align: start;
 }
 
 .body-section-2 {
-    display: grid;
-    flex-direction: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
+  display: grid;
+  flex-direction: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
 }
 
 .text-section {
-    text-align: start;
+  text-align: start;
 }
 
 .text-1-section {
-    color: #0B0514;
-    font-weight: bolder;
+  color: #0b0514;
+  font-weight: bolder;
 }
 
 .text-2-section {
-    color: #0B0514;
-    font-weight: normal;
+  color: #0b0514;
+  font-weight: normal;
 }
 
 .text-3-section {
-    color: #D9D9D9;
+  color: #d9d9d9;
 }
 
 .text-3-section p {
-    font-size: 28px;
-    width: 80%;
-    background-color: #0B0514;
-    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+  font-size: 28px;
+  width: 80%;
+  background-color: #0b0514;
+  padding: 0.5rem 1.25rem 0.5rem 0.5rem;
 }
 
 .text-4-section {
-    color: #0B0514;
-    font-weight: bold;
+  color: #0b0514;
+  font-weight: bold;
 }
 
 /* Section 3 */
 .section-3 {
-    background-color: #0B0514;
-    margin: 4rem auto;
-    color: #D9D9D9;
-    display: wrap;
+  background-color: #0b0514;
+  margin: 4rem auto;
+  color: #d9d9d9;
+  display: wrap;
+  margin-bottom: 8rem;
 }
 
 .title-section-3 {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 
 .body-section-3 {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: start;
-    margin: 0 auto;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: start;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
 .text-section-3 {
-    margin: 0rem 0rem 8rem 0.2rem;
+  margin: 0rem 0rem 8rem 0.2rem;
 }
 
 .article-section-3 {
-    border-left: #D9D9D9 0.1rem solid ;
-    padding: 0rem 0rem 0rem 0.2rem;
+  border-left: #d9d9d9 0.1rem solid;
+  padding: 0rem 0rem 0rem 0.2rem;
+}
+
+
+/* Media Query para dispositivos de 576px o menos */
+@media (max-width: 768px) {
+  html {
+    display: block;
+    max-width: auto;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  header,
+  footer {
+    height: 4rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .title-header,
+  .title-footer {
+    font-size: 18px;
+    height: 4rem;
+  }
+
+  .section {
+    width: 18rem;
+    padding: 0.5rem;
+  }
+
+  .section-1 {
+    margin: 5rem auto 2rem auto;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  .text-info {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .section-2 {
+    margin: 2rem auto 2rem auto;
+  }
+  .body-section-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-3 {
+    margin: 1rem auto 5rem auto;
+  }
+
+  .text-3-section p {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .section-3 .body-section-3 {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .article-section-3 {
+    padding: 0rem 1rem 1rem 0rem;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .article-section-3 p {
+    font-size: 16px;
+  }
 }
