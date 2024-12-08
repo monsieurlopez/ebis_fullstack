@@ -27,33 +27,57 @@
   <body>
     <header>
       <nav class="navbar bg-body-secondary fixed-top w-100 m-auto border-bottom border-secondary">
-        <div class="container-fluid justify-content-around">
+        <div class="container-sm justify-content-between">
           <a class="navbar-brand" href="#">
             <i class="fa-brands fa-bootstrap"></i>
             Bootstrap
           </a>
           <ul class="nav nav-underline">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Active</a>
+              <a class="nav-link" href="#inicio"> Inicio </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="#"> Pisos </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#"> Sobre mí </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Contacto</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-    <main>
-
+    <main class="container-fluid mt-2">
+      <section class="section-inicio w-75 m-auto text-center" id="inicio">
+        <h1 class=""> Alicia Ruiz </h1>
+        <h2 class=""> Agente Inmobiliario </h2>
+        <a class="btn btn-sm btn-outline-primary my-2" href="#contacto" role="button"> Contactame </a>
+      </section>
+      <section id="portfolio"></section>
+      <section id="about-me"></section>
+      <section id="contacto" class="section-inicio w-75 m-auto">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-5 mb-2">
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+          </div>
+          <div class="col-12 col-md-5 mb-2">
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          </div>
+          <div class="col-12 col-md-5 mb-2">
+            <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="inputEmail4">
+          </div>
+          <div class="col-12 col-md-5 mb-2">
+            <select class="form-select" aria-label="Default select example">
+              <option selected> Asunto </option>
+              <option value="1"> Quiero comprar un piso </option>
+              <option value="2"> Quiero vender un piso </option>
+              <option value="3"> Otro </option>
+            </select>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
