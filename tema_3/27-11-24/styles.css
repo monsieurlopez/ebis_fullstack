@@ -1,0 +1,149 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: black !important;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem;
+    background-color: #aab8aa;
+    color: black;
+    height: 4rem;
+}
+
+/* ITEM 1 */
+.component-1, .component-2 {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem auto;
+    color: white;
+}
+
+.accordion-item-personal {
+    margin: 0.3rem;
+    border: grey solid 0.15rem;
+    border-radius: 0.3rem;
+    color: white;
+    padding: 0.5rem;
+    text-align: start;
+}
+
+.accordion-body {
+    margin-top: 0.5rem;
+}
+
+section h5 {
+    color: grey;
+}
+
+/* ITEM 2 */
+.header-section-2 {
+    margin-bottom: 1rem;
+}
+
+.body-section-2 {
+    width: 100%;
+}
+
+.input-email-section-2 {
+    padding: 0.4rem 5rem 0.5rem 1rem;
+    border: 0.1rem solid grey;
+    border-radius: 0.3rem;
+    background-color: transparent;
+}
+
+.button-submit-section-2 {
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 0rem;
+}
+
+/* ITEM 3 */
+.component-3 {
+    max-width: 50%;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.article {
+    border: 0.1rem solid grey;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .article {
+        flex-direction: column;
+    }
+
+    .description-supermarket {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+}
+
+.img-supermarket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.title-supermarket {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.description-supermarket {
+    column-count: 1;
+    grid-template-columns: 1 column;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: start;
+}
+
+.text-supermarket, .subHeading-section {
+    color: grey;
+}
+
+.button-link {
+    border: 0.1rem solid grey;
+    border-radius: 0.3rem;
+    background-color: black;
+    color: white;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.title-component-3, .subHeading-section {
+    text-align: start;
+}
+
+/* RESPONSIVE FOR MOBILE SIZE */
+@media (max-width: 576px) {
+    .section, .article {
+        max-width: 90%;
+    }
+}
+
+
+

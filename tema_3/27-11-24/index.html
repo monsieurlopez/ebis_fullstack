@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Estilos CSS personalizados -->
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    <header>
+      <h1>RESPONSIVE + BOX-MODEL</h1>
+    </header>
+    <main>
+        <!-- ITEM 1 -->
+      <section class="section component-1">
+        <div class="header-section-1">
+          <h2>Robert De Niro</h2>
+          <h5>Top 5</h5>
+        </div>
+        <div class="body-section-1">
+          <div class="accordion-personal" id="accordion-responsive">
+            <div class="accordion-item-personal accordion-item-1">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="false"
+                  aria-controls="collapseOne"
+                >
+                  1. Taxi Driver (1976)
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-responsive"
+              >
+                <div class="accordion-body">
+                  Dirigida por Martin Scorsese, esta película es un retrato
+                  psicológico del veterano de Vietnam Travis Bickle (De Niro),
+                  un taxista solitario que se enfrenta al aislamiento y la
+                  violencia en la decadente Nueva York de los años 70. La frase
+                  "You talking to me?" se convirtió en un clásico del cine. Es
+                  un análisis profundo de la alienación y la locura.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item-personal accordion-item-2">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  2. El Padrino II (1974)
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-responsive"
+              >
+                <div class="accordion-body">
+                  En esta obra maestra de Francis Ford Coppola, De Niro
+                  interpreta a un joven Vito Corleone, mostrando cómo ascendió
+                  al poder en los bajos fondos de Nueva York. Su actuación le
+                  valió un Premio Oscar al Mejor Actor de Reparto. La película
+                  entrelaza magistralmente el pasado y el presente de la familia
+                  Corleone.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item-personal accordion-item-3">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  3. Toro Salvaje (Raging Bull, 1980)
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-responsive"
+              >
+                <div class="accordion-body">
+                  Otra colaboración con Scorsese, esta biografía sigue la vida
+                  del boxeador Jake LaMotta, interpretado por De Niro, quien
+                  ganó un Oscar al Mejor Actor por su papel. La película explora
+                  los altibajos de LaMotta, desde su éxito en el ring hasta su
+                  autodestrucción debido a su temperamento violento y su
+                  inseguridad.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item-personal accordion-item-4">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  4. Buenos Muchachos (Goodfellas, 1990)
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-responsive"
+              >
+                <div class="accordion-body">
+                  Dirigida también por Scorsese, De Niro interpreta a Jimmy
+                  Conway, un mafioso calculador en esta obra maestra del cine
+                  criminal. La película sigue la vida de Henry Hill (Ray Liotta)
+                  y su ascenso en el mundo del crimen organizado, con
+                  actuaciones electrizantes de todo el elenco. Es un retrato
+                  fascinante de la vida en la mafia.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item-personal accordion-item-5">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  5. Casino (1995)
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-responsive"
+              >
+                <div class="accordion-body">
+                  En este épico drama criminal, De Niro interpreta a Sam "Ace"
+                  Rothstein, un gerente de casino en Las Vegas que intenta
+                  manejar el negocio mientras enfrenta la corrupción, la
+                  violencia y las tensiones con su esposa (interpretada por
+                  Sharon Stone). La película, dirigida por Scorsese, ofrece una
+                  visión cruda del poder y la decadencia en el mundo de los
+                  casinos controlados por la mafia.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIN ITEM 1 -->
+       <!-- ITEM 2 -->
+      <section class="section component-2">
+        <div class="header-section-2">
+            <h2> Follow the latest trends</h2>
+            <h5> With our daily newsletter </h5>
+        </div>
+        <div >
+            <input class="input-email-section-2" type="email" placeholder="you@example.com">
+            <button class="button-submit-section-2" type="submit">Submit</button>
+        </div>
+      </section>
+      <!-- FIN ITEM 2 -->
+       <!-- FIN ITEM 3 -->
+      <section class="section component-3">
+        <h2 class="title-component-3">Supermercados</h2>
+        <h5 class="subHeading-section">
+          Top 3 mejores supermercados de España
+        </h5>
+        <!-- Tarjeta 1 -->
+        <div class="article article-1">
+          <!-- Imagen -->
+          <div class="img-supermarket">
+            <img src="./assets/mercadona.png" alt="Logo Mercadona" />
+          </div>
+          <!-- Descripción -->
+          <div class="description-supermarket">
+            <!-- Nombre supermercado -->
+            <h3 class="title-supermarket">Mercadona</h3>
+            <!-- Texto resumen supermercado -->
+            <p class="text-supermarket">
+              Desde 1993 Mercadona basa todas sus decisiones en su Modelo de
+              Calidad Total que busca satisfacer por igual y con la misma
+              intensidad a los cinco componentes de la empresa: “El Jefe”, como
+              internamente denomina al cliente, El Trabajador, El Proveedor, La
+              Sociedad y El Capital.
+            </p>
+            <!-- Boton con acceso al sitio web del supermercado -->
+            <button
+              class="button-link"
+              type="button"
+              onclick="location.href='https://www.mercadona.es/';"
+              alt="Enlace a la web de Mercadona"
+            >
+              Sitio web
+            </button>
+          </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="article article-2">
+          <div class="img-supermarket">
+            <img src="./assets/carrefour.webp" alt="Logo Carrefour" />
+          </div>
+          <div class="description-supermarket">
+            <h3 class="title-supermarket">Carrefour</h3>
+            <p class="text-supermarket">
+              Somos especialistas en electrónica de consumo, informática, moda,
+              deportes, electrodomésticos, juguetes etc. Contamos con más de
+              400.000 productos a tu servicio y cada día ampliamos un poco más
+              el surtido de productos que ofrecemos para darte un mejor
+              servicio.
+            </p>
+            <button
+              class="button-link"
+              type="button"
+              onclick="location.href='https://www.carrefour.es/';"
+              alt="Enlace a la web de Carrefour"
+            >
+              Sitio web
+            </button>
+          </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="article article-3">
+          <div class="img-supermarket">
+            <img src="./assets/lidl.jpg" alt="Logo Lidl" />
+          </div>
+          <div class="description-supermarket">
+            <h3 class="title-supermarket">Lidl</h3>
+            <p class="text-supermarket">
+              Nuestro modelo de negocio se caracteriza por ofrecer los productos
+              de mayor calidad al mejor precio del mercado, a través de una
+              apuesta decidida por la sostenibilidad y la creación de valor
+              compartido para la sociedad española.
+            </p>
+            <button
+              class="button-link"
+              type="button"
+              onclick="location.href='https://www.mercadona.es/';"
+              alt="Enlace a la web de Mercadona"
+            >
+              Sitio web
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- FIN ITEM 3 -->
+    </main>
+  </body>
+</html>
