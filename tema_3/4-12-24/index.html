@@ -58,25 +58,41 @@
       <section id="portfolio"></section>
       <section id="about-me"></section>
       <section id="contacto" class="section-inicio w-75 m-auto">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-5 mb-2">
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+          <div class="text-center">
+            <h2 class="text-center"> Contactame </h2>
+            <p> Los campos marcados con * son obligatorios </p>
           </div>
-          <div class="col-12 col-md-5 mb-2">
-            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-          </div>
-          <div class="col-12 col-md-5 mb-2">
-            <input type="email" class="form-control" placeholder="Email" aria-label="Email" id="inputEmail4">
-          </div>
-          <div class="col-12 col-md-5 mb-2">
-            <select class="form-select" aria-label="Default select example">
-              <option selected> Asunto </option>
-              <option value="1"> Quiero comprar un piso </option>
-              <option value="2"> Quiero vender un piso </option>
-              <option value="3"> Otro </option>
-            </select>
-          </div>
-        </div>
+          <form class="row justify-content-center">
+            <div class="col-12 col-md-5 mb-2">
+              <input type="text" class="form-control" placeholder="Nombre *" aria-label="First name" required>
+            </div>
+            <div class="col-12 col-md-5 mb-2">
+              <input type="text" class="form-control" placeholder="Apellidos" aria-label="Last name">
+            </div>
+            <div class="col-12 col-md-5 mb-2">
+              <input type="email" class="form-control" placeholder="Correo electronico *" aria-label="Email" id="inputEmail4" required>
+            </div>
+            <div class="col-12 col-md-5 mb-2">
+              <select class="form-select" aria-label="Default select example" required>
+                <option selected> Asunto * </option>
+                <option value="1"> Quiero comprar un piso </option>
+                <option value="2"> Quiero vender un piso </option>
+                <option value="3"> Otro </option>
+              </select>
+            </div>
+            <div class="form col-12 col-md-5 mb-2">
+              <textarea class="form-control" placeholder="¿Quieres dejarme un mensaje?" id="floatingTextarea"></textarea>
+            </div>
+            <div class="form-check col-12 col-md-5 mb-2 ps-0">
+              <input class="form-check-input ms-3" type="checkbox" value="" id="flexCheckDefault" required>
+              <label class="form-check-label ms-2" for="flexCheckDefault">
+                Acepto las terminos y condiciones *
+              </label>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-sm col-2 col-md-2 col-lg-1"> Enviar </button>
+            </div>
+          </form>
       </section>
     </main>
   </body>
