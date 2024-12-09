@@ -4,10 +4,30 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+section {
+    margin: 2rem auto;
+}
+
 .fa-bootstrap {
     color: blue;
 }
 
 .section-inicio {
     padding-top: 3.6rem;
+}
+
+.carousel-size {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 576px) {
+    .carousel-size {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 }
