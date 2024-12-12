@@ -56,29 +56,32 @@
     <!-- Header -->
     <header>
       <!-- NavBar -->
-      <nav class="navbar bg-body-secondary fixed-top w-100 m-auto">
+      <nav class="navbar">
         <div class="container-sm justify-content-between">
           <a class="navbar-brand" href="#inicio">
-            <i class="fa-solid fa-house-chimney"></i>
+            <img src="./assets/seo/favicon.ico" alt="">
           </a>
           <!-- Links navegación -->
-          <ul class="nav nav-underline">
-            <li class="nav-item">
-              <a class="nav-link" href="#inicio"> Inicio </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services"> Servicios </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio"> Pisos </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#about-me"> Sobre mí </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contacto">Contacto</a>
-            </li>
-          </ul>
+           <div class="nav-container-items">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#inicio"> Inicio </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services"> Servicios </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio"> Pisos </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about-me"> Sobre mí </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+
+           </div>
         </div>
       </nav>
       <!-- Fin de la NavBar -->
@@ -98,8 +101,11 @@
           <h1 class="title">Alicia Ruiz</h1>
           <h2 class="title">Agente Inmobiliario</h2>
           <!-- Botón contactar -->
+          <a class="btn btn-sm btn-outline-light my-2 me-2" href="mailto:alicia.ruiz@remax.es" target="_blank" role="button">
+            <i class="fa-regular fa-envelope"></i> Email
+          </a>
           <a class="btn btn-sm btn-outline-light my-2" href="https://api.whatsapp.com/send?phone=640554110" target="_blank" role="button">
-            <i class="fa-regular fa-comments"></i> Contactame
+            <i class="fa-regular fa-comments"></i> Whatsapp
           </a>
         </div>
       </section>
@@ -275,7 +281,7 @@
             </div>
             <!-- Botón envio -->
             <div class="text-center">
-              <button type="submit" class="btn btn-primary btn-sm col-2 col-md-2 col-lg-1"> Enviar </button>
+              <button type="submit" class="btn btn-primary btn-sm col-3 col-md-2 col-lg-1"> Enviar </button>
             </div>
           </form>
           <!-- Fin del formulario -->
