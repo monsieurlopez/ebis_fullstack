@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+  <!-- HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,13 +50,18 @@
     <!-- Fin Font Awesome -->
     <title> Alicia Ruiz </title>
   </head>
+  <!-- FIN DEL HEAD -->
+  <!-- BODY -->
   <body>
+    <!-- Header -->
     <header>
+      <!-- NavBar -->
       <nav class="navbar bg-body-secondary fixed-top w-100 m-auto">
         <div class="container-sm justify-content-between">
           <a class="navbar-brand" href="#inicio">
             <i class="fa-solid fa-house-chimney"></i>
           </a>
+          <!-- Links navegación -->
           <ul class="nav nav-underline">
             <li class="nav-item">
               <a class="nav-link" href="#inicio"> Inicio </a>
@@ -75,26 +81,37 @@
           </ul>
         </div>
       </nav>
+      <!-- Fin de la NavBar -->
     </header>
+    <!-- Fin del Header -->
+    <!-- Contenido principal -->
     <main class="mt-2">
+      <!-- Seccion 1: Inicio -->
       <section class="section-inicio w-100 d-flex justify-content-center align-items-center text-center parent" id="inicio">
+        <!-- Foto Banner -->
         <div class="overlay">
           <div class="dark-layer"></div>
           <img src="./assets/photos/banner.jpg" alt="Banner Background">
         </div>
+        <!-- Título y Subtítulo -->
         <div class="content text-center">
           <h1 class="title">Alicia Ruiz</h1>
           <h2 class="title">Agente Inmobiliario</h2>
+          <!-- Botón contactar -->
           <a class="btn btn-sm btn-outline-light my-2" href="https://api.whatsapp.com/send?phone=640554110" target="_blank" role="button">
             <i class="fa-regular fa-comments"></i> Contactame
           </a>
         </div>
       </section>
+      <!-- Fin de la sección 1 -->
+      <!-- Sección 2: Servicios -->
       <section class="section-services w-75 m-auto" id="services">
+        <!-- Encabezado de la sección -->
         <div class="text-center">
           <h2> Servicios </h2>
           <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quidem expedita, dolores quos consequuntur </p>
         </div>
+        <!-- Tarjetas con los servicios -->
         <div class="row justify-content-center gap-3">
           <div class="card col-12 col-md-4 pt-2" style="width: 18rem;">
             <img src="./assets/photos/img-asesoramiento.jpg" class="card-img-top figure-img img-fluid rounded" alt="...">
@@ -122,12 +139,17 @@
           </div>
         </div>
       </section>
+      <!-- Fin de la sección 2 -->
+      <!-- Sección 3: Portfolio -->
       <section class="section-portfolio w-75 m-auto" id="portfolio">
+        <!-- Encabezado de la sección -->
         <div class="text-center">
           <h2> Pisos en venta </h2>
           <p> Sea cual sea tu presupuesto, tenemos un piso para ti. </p>
         </div>
+        <!-- Carrusel para mostrar los pisos -->
         <div id="carouselExampleCaptions" class="carousel slide carousel-size">
+          <!-- Botones inferiores del carrusel para ir directamente a las imagenes seleccionadas -->
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -136,6 +158,7 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
 
           </div>
+          <!-- Imágenes del carrusel -->
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="./assets/photos/img-1.jpg" class="d-block w-100" alt="...">
@@ -173,6 +196,7 @@
               </div>
             </div>
           </div>
+          <!-- Botones del carrusel de izq y derecha -->
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -182,13 +206,17 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
       </section>
+      <!-- Fin de la sección 3 -->
+      <!-- Sección 4: Sobre mí  -->
       <section class="section-about w-75 m-auto" id="about-me">
         <div>
+          <!-- Encabezado de la sección -->
           <h2 class="text-center"> Sobre mí </h2>
           <div class="row text-center justify-content-center align-items-center">
+            <!-- Foto -->
             <img id="img-alicia" src="./assets/photos/img-alicia-1.jpg" alt="" class="col-12 col-md-5 img-fluid figure-img rounded">
+            <!-- Texto -->
             <p class="col-12 col-md-5 p-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
               deserunt, quae, quod voluptatibus ea atque quia, voluptas
               consequatur deleniti natus.</br></br>
@@ -204,21 +232,29 @@
           </div>
         </div>
       </section>
+      <!-- Fin de la sección 4 -->
+      <!-- Sección 5: Contacto -->
       <section id="contacto" class="section-contacto w-75 m-auto">
+          <!-- Encabezado de la sección -->
           <div class="text-center">
             <h2 class="text-center"> Contactame </h2>
             <p> Los campos marcados con * son obligatorios </p>
           </div>
+          <!-- Formulario de contacto -->
           <form class="row justify-content-center mb-4">
+            <!-- Campo nombre -->
             <div class="col-12 col-md-5 mb-2">
               <input type="text" class="form-control" placeholder="Nombre *" aria-label="First name" required>
             </div>
+            <!-- Campo apellidos -->
             <div class="col-12 col-md-5 mb-2">
               <input type="text" class="form-control" placeholder="Apellidos" aria-label="Last name">
             </div>
+            <!-- Campo email -->
             <div class="col-12 col-md-5 mb-2">
               <input type="email" class="form-control" placeholder="Correo electronico *" aria-label="Email" id="inputEmail4" required>
             </div>
+            <!-- Campo asunto -->
             <div class="col-12 col-md-5 mb-2">
               <select class="form-select" aria-label="Default select example" required>
                 <option selected> Asunto * </option>
@@ -227,6 +263,7 @@
                 <option value="3"> Otro </option>
               </select>
             </div>
+            <!-- Campo mensaje -->
             <div class="form col-12 col-md-5 mb-3">
               <textarea class="form-control" placeholder="¿Quieres dejarme un mensaje?" id="floatingTextarea"></textarea>
             </div>
@@ -236,11 +273,16 @@
                 Acepto las terminos y condiciones *
               </label>
             </div>
+            <!-- Botón envio -->
             <div class="text-center">
               <button type="submit" class="btn btn-primary btn-sm col-2 col-md-2 col-lg-1"> Enviar </button>
             </div>
           </form>
+          <!-- Fin del formulario -->
       </section>
+      <!-- Fin de la sección 5 -->
     </main>
+    <!-- Fin del Contenido principal -->
   </body>
+  <!-- FIN DEL BODY -->
 </html>
