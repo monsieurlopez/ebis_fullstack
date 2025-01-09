@@ -23,38 +23,42 @@ header {
   margin: 4rem auto;
 }
 
+#navigation-select {
+  display: none;
+}
+
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
 }
 
 .nav-container-items .nav {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-container-items {
-    border: 0.1rem transparent white;
-    border-radius: 1rem;
-    background-color: #00c5b1;
-    padding: 0rem 0.5rem 0rem 0.5rem;
-  }
+  border: 0.1rem transparent white;
+  border-radius: 1rem;
+  background-color: #00c5b1;
+  padding: 0rem 0.5rem 0rem 0.5rem;
+}
 
 .nav-item .nav-link {
-font-family: Verdana, Geneva, Tahoma, sans-serif;
-color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
 }
 
 .nav-item .nav-link:hover {
-color: whitesmoke;
-text-decoration: underline;
+  color: whitesmoke;
+  text-decoration: underline;
 }
 
 .banner-container {
@@ -94,7 +98,7 @@ text-decoration: underline;
 
 @media (max-width: 767px) {
   .banner img {
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 
@@ -128,35 +132,31 @@ text-decoration: underline;
 }
 
 #img-alicia {
-  width: 20rem;
+  width: 30rem;
   height: auto;
   object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-    }
-    
-    .nav-container-items {
-        flex-grow: 1;
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-    }
+  .container-sm {
+    align-items: center;
+  }
+  .navbar-brand {
+    display: block;
+  }
 
-    .nav-container-items .nav {
-        flex-direction: row; 
-        gap: 0.5rem;
-    }
+  .nav-container-items {
+    display: none;
+  }
 
-    .nav-item .nav-link {
-        font-size: 0.9rem;
-    }
+  .navbar-brand img {
+    max-height: 40px;
+  }
 
-    .navbar-brand img {
-        max-height: 30px;/
-    }
+  #navigation-select {
+    background-color: #00c5b1;
+    color: #ffffff;
+    display: block;
+    width: 80%;
+  }
 }
-
-

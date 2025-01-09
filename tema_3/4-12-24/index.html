@@ -55,7 +55,7 @@
           <a class="navbar-brand" href="#inicio">
             <img src="./assets/seo/favicon.ico" alt="icono personal Alicia Ruiz">
           </a>
-          <!-- Links navegación -->
+          <!-- Links navegación navbar-->
            <div class="nav-container-items">
             <ul class="nav">
               <li class="nav-item">
@@ -74,8 +74,15 @@
                   <a class="nav-link" href="#contacto">Contacto</a>
               </li>
             </ul>
-
            </div>
+           <!-- Links navegación select-->
+           <select class="form-select" aria-label="select navigation" id="navigation-select">
+            <option value="#inicio" selected>Inicio</option>
+            <option value="#services">Servicios</option>
+            <option value="#portfolio">Pisos</option>
+            <option value="#about-me">Sobre mí</option>
+            <option value="#contacto">Contacto</option>
+          </select>
         </div>
       </nav>
       <!-- Fin de la NavBar -->
@@ -285,4 +292,13 @@
     <!-- Fin del Contenido principal -->
   </body>
   <!-- FIN DEL BODY -->
+  <script>
+    // Cambios en el select del header
+    document.getElementById('navigation-select').addEventListener('change', function () {
+      const selectedValue = this.value;
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+  </script>
 </html>
