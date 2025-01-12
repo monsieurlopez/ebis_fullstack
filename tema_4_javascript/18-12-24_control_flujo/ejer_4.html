@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        const num1 = Number(window.prompt("Introduce un número:"))
+        const num2 = Number(window.prompt("Introduce otro número:"))
+        const num3 = Number(window.prompt("Introduce el último número:"))
+
+        const NUMEROS = [num1, num2, num3];
+        NUMEROS.sort(function(a, b) { return a - b })
+
+        if (NUMEROS[2] - NUMEROS[1] >= 20) window.alert(`La diferencia entre ${NUMEROS[2]} y ${NUMEROS[1]} es mayor a 20`)
+        if (NUMEROS[2] - NUMEROS[0] >= 20) window.alert(`La diferencia entre ${NUMEROS[2]} y ${NUMEROS[0]} es mayor a 20`)
+        if (NUMEROS[1] - NUMEROS[0] >= 20) window.alert(`La diferencia entre ${NUMEROS[1]} y ${NUMEROS[0]} es mayor a 20`)
+
+    </script>
+</body>
+</html>
