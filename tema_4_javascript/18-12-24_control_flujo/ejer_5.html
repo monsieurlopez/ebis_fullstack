@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      //En este script uso if else
       function eliminarTildes(texto) {
         return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       }
@@ -28,22 +29,42 @@
       //Aplico una modificacion para eliminar las tildes del input introducido para que coincida con nuestro array
       let diaIntroducidoMinusSinTildes = eliminarTildes(diaIntroducidoMinus);
 
-      if (DIAS_DE_LA_SEMANA.includes(diaIntroducidoMinusSinTildes)) {
-        if (
-          diaIntroducidoMinusSinTildes === "lunes" ||
-          diaIntroducidoMinusSinTildes === "martes" ||
-          diaIntroducidoMinusSinTildes === "miercoles" ||
-          diaIntroducidoMinusSinTildes === "jueves" ||
-          diaIntroducidoMinusSinTildes === "viernes"
-        ) {
-          window.alert(`Hoy es ${DIA_INTRODUCIDO}`);
-        } else {
-          window.alert("Es fin de semana");
-        }
+      if (
+        diaIntroducidoMinusSinTildes === "lunes" ||
+        diaIntroducidoMinusSinTildes === "martes" ||
+        diaIntroducidoMinusSinTildes === "miercoles" ||
+        diaIntroducidoMinusSinTildes === "jueves" ||
+        diaIntroducidoMinusSinTildes === "viernes"
+      ) {
+        window.alert(`Hoy es ${DIA_INTRODUCIDO}`);
+      } else if (
+        diaIntroducidoMinusSinTildes === "sabado" ||
+        diaIntroducidoMinusSinTildes === "domingo"
+      ) {
+        window.alert(`Es fin de semana, disfruta del ${DIA_INTRODUCIDO}`);
       } else {
         window.alert(
           "El día introducido no es correcto o no esta bien escrito"
         );
+      }
+    </script>
+    <script>
+      switch (diaIntroducidoMinusSinTildes) {
+        case "lunes":
+        case "martes":
+        case "miercoles":
+        case "jueves":
+        case "viernes":
+          window.alert(`Hoy es ${DIA_INTRODUCIDO}`);
+          break;
+        case "sabado":
+        case "domingo":
+          window.alert(`Es fin de semana, disfruta del ${DIA_INTRODUCIDO}`);
+          break;
+        default:
+          window.alert(
+            "El día introducido no es correcto o no esta bien escrito"
+          );
       }
     </script>
   </body>
