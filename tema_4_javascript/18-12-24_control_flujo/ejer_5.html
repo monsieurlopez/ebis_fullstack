@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5</title>
+  </head>
+  <body>
+    <script>
+      function eliminarTildes(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      const DIAS_DE_LA_SEMANA = [
+        "lunes",
+        "martes",
+        "miercoles",
+        "jueves",
+        "viernes",
+        "sabado",
+        "domingo",
+      ];
+
+      const DIA_INTRODUCIDO = window.prompt("Introduce un dia de la semana:");
+
+      //Aplico una modificacion para pasar el input introducido a minúsculas para que coincida con nuestro array
+      let diaIntroducidoMinus = DIA_INTRODUCIDO.toLowerCase();
+      //Aplico una modificacion para eliminar las tildes del input introducido para que coincida con nuestro array
+      let diaIntroducidoMinusSinTildes = eliminarTildes(diaIntroducidoMinus);
+
+      if (DIAS_DE_LA_SEMANA.includes(diaIntroducidoMinusSinTildes)) {
+        if (
+          diaIntroducidoMinusSinTildes === "lunes" ||
+          diaIntroducidoMinusSinTildes === "martes" ||
+          diaIntroducidoMinusSinTildes === "miercoles" ||
+          diaIntroducidoMinusSinTildes === "jueves" ||
+          diaIntroducidoMinusSinTildes === "viernes"
+        ) {
+          window.alert(`Hoy es ${DIA_INTRODUCIDO}`);
+        } else {
+          window.alert("Es fin de semana");
+        }
+      } else {
+        window.alert(
+          "El día introducido no es correcto o no esta bien escrito"
+        );
+      }
+    </script>
+  </body>
+</html>
