@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 13</title>
+  </head>
+  <body>
+    <script>
+      const FRASE = window.prompt("Escribe una frase cualquiera")
+
+      const LONGITUD_FRASE = Number(FRASE.length)
+      const TIPO_LONGITUD = LONGITUD_FRASE % 2 === 0 ? "par" : "inpar"
+
+      if (TIPO_LONGITUD === "par") {
+        let indicePar = parseInt(LONGITUD_FRASE / 2)
+        window.alert(FRASE[indicePar-1] + FRASE[indicePar])
+      } else {
+        let indiceInpar = parseInt(LONGITUD_FRASE / 2)
+        window.alert(FRASE[indiceInpar])
+      }
+    </script>
+  </body>
+</html>
