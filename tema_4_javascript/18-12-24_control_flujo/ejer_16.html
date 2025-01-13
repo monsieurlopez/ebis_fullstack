@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 16</title>
+  </head>
+  <body>
+    <script>
+      const MENSAJE = `
+        ¿Con qué departamento desea hablar?
+
+            Pulsa 1 - Departamento de RRHH
+            Pulsa 2 - Departamento de Dirección
+            Pulsa 3 - Departamento de Marketing
+            Pulsa 4 - Departamento de Contabilidad y Finanzas
+            Pulsa 5 - Departamento de Compras
+            Pulsa 6 - Departamento de Producción
+        `
+      const TECLA_PULSADA = Number(window.prompt(MENSAJE))
+
+      if (TECLA_PULSADA === 1) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de RRHH`
+        )
+      } else if (TECLA_PULSADA === 2) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de Dirección`
+        )
+      } else if (TECLA_PULSADA === 3) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de Marketing`
+        )
+      } else if (TECLA_PULSADA === 4) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de Contabilidad y Finanzas`
+        )
+      } else if (TECLA_PULSADA === 5) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de Compras`
+        )
+      }  else if (TECLA_PULSADA === 6) {
+        window.alert(
+          `Ha pulsado la tecla ${TECLA_PULSADA}, le pasamos con el departamento de Producción`
+        )
+      }
+    </script>
+  </body>
+</html>
