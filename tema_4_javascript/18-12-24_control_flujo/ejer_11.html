@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 11</title>
+  </head>
+  <body>
+    <script>
+      let NUM_1 = Number(
+        window.prompt("Escribe un número entero entre 25 y 75:")
+      );
+      let NUM_2 = Number(
+        window.prompt("Escribe otro número entero entre 25 y 75:")
+      );
+
+      if ((NUM_1 >= 25 && NUM_1 <= 75) && (NUM_2 >= 25 && NUM_2 <= 75)) {
+        NUM_1 = parseInt(NUM_1).toString();
+        NUM_2 = parseInt(NUM_2).toString();
+
+        if (NUM_1[0] === NUM_2[0]) {
+          window.alert(`${NUM_1[0]} es un dígito en común`);
+        }
+        if (NUM_1[0] === NUM_2[1]) {
+          window.alert(`${NUM_1[0]} es un dígito en común`);
+        }
+        if (NUM_1[1] === NUM_2[0]) {
+          window.alert(`${NUM_1[1]} es un dígito en común`);
+        }
+        if (NUM_1[1] === NUM_2[1]) {
+          window.alert(`${NUM_1[1]} es un dígito en común`);
+        }
+      } else {
+        window.alert(
+          "Los números introducidos no se encuetran entre el 25 y el 75"
+        );
+      }
+    </script>
+  </body>
+</html>
