@@ -7,7 +7,14 @@
 </head>
 <body>
     <script>
-        const NUMERADOR 
+        const NUMERADOR = Number(window.prompt("Introduce el numerador"))
+        const DENOMINADOR = Number(window.prompt("Introduce el denominador"))
+
+        if (DENOMINADOR !== 0) {
+            window.alert(`El resultado de la division entre ${NUMERADOR} y ${DENOMINADOR} es igual a : ` + NUMERADOR / DENOMINADOR)
+        } else {
+            window.alert("No se puede dividir por 0")
+        }
     </script>
 </body>
 </html>
