@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+<body>
+    <script>
+        const NUM1 = Number(window.prompt("Escribe un número"))
+        const NUM2 = Number(window.prompt("Escribe otro número"))
+        const NUM3 = Number(window.prompt("Escribe el último número"))
+
+        if (NUM1 > NUM2 && NUM1 > NUM3) {
+            window.alert(`El número ${NUM1} es el más alto`)
+        } else if (NUM2 > NUM1 && NUM2 > NUM3) {
+            window.alert(`El número ${NUM2} es el más alto`)
+        } else if (NUM3 > NUM1 && NUM3 > NUM2) {
+            window.alert(`El número ${NUM3} es el más alto`)
+        }
+    </script>
+</body>
+</html>
