@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+  </head>
+  <body>
+    <script>
+      const NUM_1 = Number(window.prompt("Escribe un número:"));
+      const NUM_2 = Number(window.prompt("Escribe otro número:"));
+
+      const RESTO_NUM_1 = NUM_1 % 6;
+      const RESTO_NUM_2 = NUM_2 % 6;
+
+      if (NUM_1 === NUM_2) {
+        window.alert("Los dos números son iguales ==> 0");
+      } else if (RESTO_NUM_1 === RESTO_NUM_2) {
+        NUM_1 > NUM_2
+          ? window.alert(
+              `El resto entre los dos números coincide pero ${NUM_2} es el menor`
+            )
+          : window.alert(
+              `El resto entre los dos números coincide pero ${NUM_1} es el menor`
+            );
+      } else {
+        NUM_1 > NUM_2
+          ? window.alert(`El número mayor es ${NUM_1}`)
+          : window.alert(`El número mayor es ${NUM_2}`);
+      }
+    </script>
+  </body>
+</html>
