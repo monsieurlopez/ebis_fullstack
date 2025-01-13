@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <script>
+        const PUESTO = Number(window.prompt("¿En qué puesto acabaste la carrera?"))
+
+        PUESTO === 1 ? window.alert("Ganaste") : window.alert("Lo importante es participar")
+
+        if (PUESTO === 1) {
+            window.alert("Medalla de oro")
+        } else if (PUESTO === 2) {
+            window.alert("Medalla de plata")
+        } else if (PUESTO === 3) {
+            window.alert("Medalla de bronce")
+        } else {
+            window.alert("Lo importante es participar")
+        }
+
+        switch (PUESTO) {
+            case 1:
+                window.alert("Medalla de oro")
+                break
+            case 2:
+                window.alert("Medalla de plata")
+                break
+            case 3:
+                window.alert("Medalla de bronce")
+                break
+            default:
+                window.alert("Lo importante es participar")
+                break
+        }
+
+        if (PUESTO == 1 || PUESTO == 2 || PUESTO == 3) {
+            window.alert("Sube al podium")
+        } else {
+            window.alert("Se acabo la carrera")
+        }
+
+    </script>
+</body>
+</html>
