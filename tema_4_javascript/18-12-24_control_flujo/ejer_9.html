@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        const TEMPERATURA = Number(window.prompt("¿Qué temperatura hace donde estás?"))
+
+        if (TEMPERATURA > 40) {
+            window.alert("Vete a otro sitio")
+        } else if (TEMPERATURA > 30 && TEMPERATURA <= 40) {
+            window.alert("Enciende el aire acondicionado")
+        } else if (TEMPERATURA > 20 && TEMPERATURA <= 30) {
+            window.alert("No hagas nada")
+        } else if (TEMPERATURA > 10 && TEMPERATURA <=20) {
+            window.alert("Enciende la calefacción")
+        } else if (TEMPERATURA <= 10) {
+            window.alert("Vete a otro sitio")
+        }
+    </script>
+</html>
