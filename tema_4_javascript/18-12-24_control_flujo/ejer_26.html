@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 26</title>
+</head>
+<body>
+    <script>
+        const MOV_USUARIO = window.prompt("Escribe tu movimiento: piedra, papel o tijera").toLowerCase()
+
+        //Funcion para generar un numero aleatorio al que asignaremos el movimiento del programa
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        const MOV_ALEATORIO = getRandomInt(3)
+        let opcionPrograma = null;
+
+        if (MOV_ALEATORIO === 0) {
+            opcionPrograma = "piedra"
+        } else if (MOV_ALEATORIO === 1) {
+            opcionPrograma = "papel"
+        } else {
+            opcionPrograma = "tijera"
+        }
+
+        window.alert(`El movimiento del programa es ${opcionPrograma}`)
+
+        const RESUMEN = `
+            Tu movimiento: ${MOV_USUARIO}
+            Movimiento del programa: ${opcionPrograma}
+        `
+
+        window.alert(RESUMEN)
+
+        if (MOV_USUARIO === "piedra" && opcionPrograma === "piedra") {
+            window.alert("Repetimos")
+            window.location.reload()
+        } else if (MOV_USUARIO === "piedra" && opcionPrograma === "papel") {
+            window.alert("Perdiste")
+        } else if (MOV_USUARIO === "piedra" && opcionPrograma === "tijera") {
+            window.alert("Ganaste")
+        } else if (MOV_USUARIO === "papel" && opcionPrograma === "piedra") {
+            window.alert("Ganaste")
+        } else if (MOV_USUARIO === "papel" && opcionPrograma === "papel") {
+            window.alert("Repetimos")
+            window.location.reload()
+        } else if (MOV_USUARIO === "papel" && opcionPrograma === "tijera") {
+            window.alert("Perdiste")
+        } else if (MOV_USUARIO === "tijera" && opcionPrograma === "piedra") {
+            window.alert("Perdiste")
+        } else if (MOV_USUARIO === "tijera" && opcionPrograma === "papel") {
+            window.alert("Ganaste")
+        } else if (MOV_USUARIO === "tijera" && opcionPrograma === "tijera") {
+            window.alert("Repetimos")
+            window.location.reload()
+        } else {
+            window.alert("Introduce un movimiento correcto")
+            window.location.reload()
+        }
+    </script>
+</body>
+</html>
