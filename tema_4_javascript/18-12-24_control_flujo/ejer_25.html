@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 25</title>
+</head>
+<body>
+    <script>
+        const MENSAJE = `
+            Introduce un mensaje para hablar con Bob:
+
+            Si contiene ? sera para hacerle una pregunta.
+            Si contiene ! sera para gritarle.
+            Si contiene !? sera para hacerle una pregunta con gritos.
+            Podemos no escribir ningun mensaje o salirnos de las reglas anteriores
+        `
+        const INICIO = window.prompt(MENSAJE)
+
+        if (INICIO.includes("!") && INICIO.includes("?")) {
+            window.alert("Bob dice: ¡Eh, tranquilízate! Yo sé lo que hago.")
+        } else if (INICIO.includes("!")) {
+            window.alert("Bob dice: ¡Eh!, tranquilízate.")
+        } else if (INICIO.includes("?")) {
+            window.alert("Bob dice: ¡Claro!")
+        } else if (INICIO.length === 0) {
+            window.alert("Bob dice: Vale con que esas tenemos...")
+        } else {
+            window.alert("Bob dice: Sin más.")
+        }
+    </script>
+</body>
+</html>
