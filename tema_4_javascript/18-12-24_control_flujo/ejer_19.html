@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+<body>
+    <script>
+
+        const NOTA1 = Number(window.prompt("¿Cúal ha sido la nota del primer examen?"))
+        const NOTA2 = Number(window.prompt("¿Cúal ha sido la nota del segundo examen?"))
+        const NOTA3 = Number(window.prompt("¿Cúal ha sido la nota del tercer examen?"))
+
+        const MEDIA = NOTA1 > NOTA2 ? (NOTA1+NOTA3)/2 : (NOTA2+NOTA3)/2
+
+        if ((NOTA1 || NOTA2 || NOTA3) > 10 || (NOTA1 || NOTA2 || NOTA3) < 0) {
+            window.alert("La nota introducida no es valida")
+            window.location.reload() //Agrego esto para reiniciar el programa
+        } else {
+            if (MEDIA === 10 ) {
+                window.alert(`${MEDIA}: Matricula`)
+            } else if (MEDIA >= 9 && MEDIA < 10) {
+                window.alert(`${MEDIA}: Sobresaliente`)
+            } else if (MEDIA >= 7 && MEDIA < 9) {
+                window.alert(`${MEDIA}: Notable`)
+            } else if (MEDIA >= 6 && MEDIA < 7) {
+                window.alert(`${MEDIA}: Bien`)
+            } else if (MEDIA >= 5 && MEDIA < 6) {
+                window.alert(`${MEDIA}: Suficiente`)
+            } else if (MEDIA >= 0 && MEDIA < 5) {
+                window.alert(`${MEDIA}: Suspenso`)
+            }
+        }
+
+    </script>
+</body>
+</html>
