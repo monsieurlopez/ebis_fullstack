@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 27</title>
+</head>
+<body>
+    <script>
+        const INICIO = window.alert("Comienza la aventura. A medida que vayas seleccionando opciones iras creando tú propia historia. ¡Adelante!")
+
+        const MENSAJE1 = `
+            Me encontraba justo delante de una señal y se abrían dos caminos, uno a la izquierda y el otro a la derecha. ¿Cúal eliges?
+
+            Pulsa 1 - Izquierda
+            Pulsa 2 - Derecha
+        `
+        const COMENZAMOS = Number(window.prompt(MENSAJE1))
+
+        const MENSAJE_IZQ = `
+            En ese momento decidiste tomar el camino de la izquierda y parecio una buena decisión hasta que llegaste a un bosque bastante espeso. De repetente,
+            detrás tuya aparecieron unos perros que iban directos hacía tí. ¿Que haces? Te puedes adentrar al bosque o por el contrario les haces frente.
+
+            Pulsa 1 - Luchas contra los perros
+            Pulsa 2 - Adentrarme al bosque
+        `
+        const MENSAJE_DER = `
+            En ese momento decidiste tomar el camino de la derecha, despues de andar como media hora viste a lo lejos una playa que tenía muy buena pinta pero había que bajar
+            por un pequeño acantilado. Tienes que tomar una decisión. ¿Que haces?
+
+            Pulsa 1 - Bajar por el acantilado
+            Pulsa 2 - Continuar el camino
+        `
+        const MENSAJE_DER_1 = `
+            Decides que bajar por el acantilado es una buena opción a pesar de que hay bastante altura y no eres un experto escalador. De repente cuando estas a mitad de camino
+            una gaviota te sorprende y pierdes equilibrio cayendo estrepitosamente al vacio.
+
+            ¡FIN DE LA AVENTURA!
+        `
+        const MENSAJE_DER_2 = `
+            Decides que continuar el camino es una buena idea. Al poco tiempo ves como el camino comienza a descender suevemente hasta llegar a la playa donde disfrutas
+            tranquilamente de un día soledado con la brisa del mar.
+
+            ¡FIN DE LA AVENTURA!
+        `
+        const MENSAJE_IZQ_1 = `
+            Despues de haber visto varias temporadas de Franck de la Jungla decides que enfrentar a los perros es una buena opción, además has visto un palo justo en el suelo y crees
+            que te servirá para defenderte. Rapidamente al ver como se acercan varios perros de gran tamaño te das cuenta que la decisión ha sido una cagada. Al primer perro le rompes
+            el palo en la cabeza, pero un segundo se te abalanza y te pega un bocado en el culo.
+
+            ¡FIN DE LA AVENTURA!
+        `
+        const MENSAJE_IZQ_2 = `
+            Decides que pelear contra esos perros no es una buena opción y sales corriendo al interior del bosque. Consigues trepar a un árbol con facilidad y ves como los perros
+            se alejan al poco tiempo. Desde la áltura ves que en medio del bosque hay una cabaña y al ir a explorarla descrubres que un vecino de la zona esta preparando café y
+            tranquilamente comparte una taza contigo.
+
+            ¡FIN DE LA AVENTURA!
+        `
+        if (COMENZAMOS === 1) {
+            const AVANCE_IZQ = Number(window.prompt(MENSAJE_IZQ))
+            if (AVANCE_IZQ === 1) {
+                window.alert(MENSAJE_IZQ_1)
+            } else {
+                window.alert(MENSAJE_IZQ_2)
+            }
+        } else {
+            const AVANCE_DER = Number(window.prompt(MENSAJE_DER))
+            if (AVANCE_DER === 1) {
+                window.alert(MENSAJE_DER_1)
+            } else {
+                window.alert(MENSAJE_DER_2)
+            }
+        }
+
+    </script>
+</body>
+</html>
