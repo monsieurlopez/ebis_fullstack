@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+</head>
+<body>
+    <script>
+        const NOMBRE = window.prompt("Escribe tu nombre")
+        const VENTAS = Number(window.prompt("Introuce tus ventas en euros"))
+
+        if (VENTAS > 500) {
+            const EXTRA = VENTAS * 0.05
+            window.alert(`${NOMBRE} tus ventas han sido de ${VENTAS} euros y has ganado el extra del 5% que equivale a ${EXTRA} euros`)
+        } else {
+            const DIF_PARA_EXTRA = 500 - VENTAS
+            window.alert(`${NOMBRE} tus ventas han sido de ${VENTAS} euros, te han faltado ${DIF_PARA_EXTRA} euros para conseguir el 5% de bonificacion, ¡Mucho ánimo para el próximo mes!`)
+        }
+    </script>
+</body>
+</html>
