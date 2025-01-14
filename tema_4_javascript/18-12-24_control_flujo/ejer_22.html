@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 22</title>
+</head>
+<body>
+    <script>
+        const EDAD = Number(window.prompt("Escribe tu edad"))
+
+        if (EDAD < 18) {
+            window.alert("Eres menor de edad, no puedes alquilar un coche.")
+        } else {
+            const CARNET = window.prompt("Pulsa S si tienes carnet de conducir o N si no lo tienes.").toLowerCase();
+
+            if (CARNET === "n") {
+                window.alert("No tienes carnet de conducir, no puedes alquilar un coche.")
+            } else if (CARNET === "s") {
+                const NOMBRE_COMPLETO = window.prompt("Escribe tu nombre completo.")
+                const CIUDAD_RECOGIDA = window.prompt("Escribe la ciudad de recogida del vehiculo.")
+                const DIAS_ALQUILER = Number(window.prompt("Escribe el número de dias que quieres alquilar el coche."))
+
+                const PRECIO_ALQUILER = DIAS_ALQUILER * 25
+                const MENSAJE = `
+                    Nombre: ${NOMBRE_COMPLETO}
+                    Ciudad de recogida: ${CIUDAD_RECOGIDA}
+                    Dias de alquiler: ${DIAS_ALQUILER}
+                    Precio a pagar: ${PRECIO_ALQUILER}
+                `
+
+                window.alert(MENSAJE)
+            } else {
+                window.alert("Has pulsado una tecla incorrecta")
+                window.location.reload()
+            }
+
+        }
+    </script>
+</body>
+</html>
