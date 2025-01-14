@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20</title>
+</head>
+<body>
+    <script>
+        let grados = Number(window.prompt("Escribe el valor de la temperatura a convertir"))
+        const CONVERSION = window.prompt("Pulsa C para convertir en Centigrados o F para convertir en Fahrenheit").toLowerCase()
+
+        if (CONVERSION === "c") {
+            const CENTIGRADOS = ((grados - 18) * 5) / 9
+            window.alert(`${grados} °F es igual a ${CENTIGRADOS} °C`)
+        } else if (CONVERSION === "f") {
+            const CENTIGRADOS = ((grados * 9 ) / 9) + 32
+            window.alert(`${grados} °C es igual a ${CENTIGRADOS} °F`)
+        } else {
+            window.alert("Has pulsado una tecla incorrecta para convertir la temperatura")
+            window.location.reload()
+        }
+    </script>
+</body>
+</html>
