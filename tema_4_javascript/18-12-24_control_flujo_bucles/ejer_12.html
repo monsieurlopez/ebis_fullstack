@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <script>
+        const NUM = window.prompt("Escribe un número de 3 cifras:")
+
+        if (NUM.length !== 3) {
+            window.alert("El número introducido no tiene 3 cifras. Vuelva a introducirlo por favor.")
+            window.location.reload()
+        } else {
+            let suma = 0
+            for (let i = 0; i < NUM.length; i++) {
+                suma += Number(NUM[i])
+            }
+            window.alert(`La suma de ${NUM[0]} + ${NUM[1]} + ${NUM[2]} = ${suma}`)
+        }
+
+    </script>
+</body>
+</html>
