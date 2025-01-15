@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        const NUM = Number(window.prompt("Escribe un número del 0 al 10:"))
+
+        if (NUM < 0 || NUM > 10) {
+            window.alert("El número introducido no es correcto.")
+            window.location.reload();
+        } else {
+            if (NUM === 0) {
+                window.alert("Fin del programa.")
+            } else {
+                let sumaNumeros = 0
+                for (let i = 0; i <= NUM; i++) {
+                    sumaNumeros += i
+                }
+                window.alert(sumaNumeros)
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
