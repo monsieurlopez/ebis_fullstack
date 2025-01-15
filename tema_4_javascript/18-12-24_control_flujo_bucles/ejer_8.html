@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        const SELECCION = window.prompt("Pulsa la tecla P si quieres visualizar todos los números pares hasta 100 o la tecla I si quieres ver los impares").toLowerCase()
+
+        for (let i = 0; i <= 100; i++) {
+            if (SELECCION === "p") {
+                if (i % 2 === 0) {
+                    console.log(i)
+                }
+            } else if (SELECCION === "i") {
+                if (i % 2 !== 0) {
+                    console.log(i)
+                }
+            } else {
+                window.alert("La tecla pulsada no corresponde a ninguna de las opciones")
+                window.location.reload()
+                break
+            }
+        }
+    </script>
+</body>
+</html>
