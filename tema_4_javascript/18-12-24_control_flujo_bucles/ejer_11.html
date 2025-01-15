@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        let num = Number(parseInt(window.prompt("Escribe un número entero y positivo:")))
+        if (num < 0) num *= -1
+        if (num === 0) {
+            window.alert(`El inverso de ${num} es ${num}`)
+        } else {
+            let numberToArray = num.toString().split("")
+            const TRANSFORM = numberToArray.reverse()
+            const RESULTADO = TRANSFORM.join("") //No transformo esta constante a Number para evitar problemas con numeros que acaban en 0
+
+            window.alert(`El inverso de ${num} es ${RESULTADO}`)
+        }
+        
+    </script>
+        
