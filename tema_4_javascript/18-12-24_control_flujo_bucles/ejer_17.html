@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+<body>
+    <script>
+        const SIMBOLO = window.prompt("Introduce un símbolo para la piramide.")
+        const LINEAS = Number(window.prompt("Introduce el número de alturas que tendrá la piramide."))
+
+        const ULTIMA_LINEA = 1 + (2 * (LINEAS -1))
+        let espacios = parseInt(ULTIMA_LINEA / 2)
+
+        let sumatorio = 1
+        for (let i = 1; i <= LINEAS; i++) {
+            if (i === 1) {
+                console.log((" ").repeat(espacios) + SIMBOLO.repeat(sumatorio) + (" ").repeat(espacios))
+            } else {
+                console.log((" ").repeat(espacios) + SIMBOLO.repeat(sumatorio) + (" ").repeat(espacios))
+            }
+            sumatorio ++
+            sumatorio ++
+            espacios --
+        }
+    </script>
+</body>
+</html>
