@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+<body>
+    <script>
+        const HOY = new Date(window.prompt("Introduce una fecha con el siguiente formato dd/mm/yyyy")).toLocaleDateString()
+        const DIA_SIGUIENTE = new Date(HOY)
+        DIA_SIGUIENTE.setDate(DIA_SIGUIENTE.getDate() + 1)
+        
+        window.alert(DIA_SIGUIENTE.toLocaleDateString())
+    </script>
+</body>
+</html>
