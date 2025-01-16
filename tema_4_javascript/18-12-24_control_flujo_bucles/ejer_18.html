@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+<body>
+    <script>
+        console.log(("*").repeat(24))
+        console.log("Calculadora")
+        console.log(("*").repeat(24))
+
+        const OPERACIONES = ["Suma", "Resta", "Multiplicación", "Potencia", "División", "Raiz", "Salir"]
+        for (let i = 0; i < OPERACIONES.length; i++) {
+            console.log(`${i+1}. ${OPERACIONES[i]}`)
+        }
+        console.log("")
+        console.log("Introduce la opción deseada:")
+
+        const OPCION = Number(window.prompt("Introduce la opción deseada:"))
+
+        if (OPCION === 7) {
+            console.log("Gracias por usar la calculadora. Fin del programa.")
+            window.alert("Gracias por usar la calculadora. Fin del programa.")
+        } else if (OPCION < 1 || OPCION > 7) {
+            window.alert(`Opción ${OPCION} no disponible, vuelva a intentarlo.`)
+            window.location.reload();
+        } else {
+            const OPERANDO1 = Number(window.prompt("Introduce el primer número:"))
+            const OPERANDO2 = Number(window.prompt("Introduce el segundo número:"))
+
+            let simbolo
+            let calculo = 0
+            switch (OPCION) {
+                case 1:
+                    simbolo = "+"
+                    calculo = OPERANDO1 + OPERANDO2
+                    break;
+                case 2:
+                    simbolo = "-"
+                    calculo = OPERANDO1 - OPERANDO2
+                    break;
+                case 3:
+                    simbolo = "*"
+                    calculo = OPERANDO1 * OPERANDO2
+                    break;
+                case 4:
+                    simbolo = "^"
+                    calculo = Math.pow(OPERANDO1, OPERANDO2)
+                    break;
+                case 5:
+                    simbolo = "/"
+                    calculo = OPERANDO1 / OPERANDO2
+                    break;
+                case 6:
+                    simbolo = "Salir"
+                    break;
+                default:
+            }
+            console.log(`Operación selecionada: ${OPERACIONES[OPCION-1]} ${OPERANDO1} ${simbolo} ${OPERANDO2} = ${calculo}`)
+            window.alert(`Operación selecionada: ${OPERACIONES[OPCION-1]} ${OPERANDO1} ${simbolo} ${OPERANDO2} = ${calculo}`)
+            window.location.reload()
+        }
+
+    </script>
+</body>
+</html>
