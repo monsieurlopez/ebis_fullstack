@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <script>
+        const MENSAJE = `
+            Introduce una contraseña:
+            - Debe contener 8 caracteres como mínimo.
+            - La contraseña deberá contener números.
+            - La primera letra tiene que ser en mayúsculas.
+        `
+        const PASSWORD = window.prompt(MENSAJE)
+        const PASSWORD_TO_ARRAY = PASSWORD.split("")
+        
+        function esMayuscula (letra) {
+            return letra === letra.toUpperCase()
+        }
+
+        let contieneNumero = false
+        let primeraLetraMayuscula = false
+        let primeraLetra = true
+        let passValida = true
+
+        if (PASSWORD_TO_ARRAY.length < 8) {
+            window.alert("La contraseña debe contener 8 caracteres como mínimo.")
+            passValida = false
+        } else {
+            for (let i = 0; i < PASSWORD_TO_ARRAY.length; i++) {
+                if (Number(PASSWORD_TO_ARRAY[i]) || PASSWORD_TO_ARRAY[i] === "0") {
+                    contieneNumero = true
+                } else {
+                    if (esMayuscula(PASSWORD_TO_ARRAY[i]) && primeraLetra) {
+                        primeraLetraMayuscula = true
+                        primeraLetra = false
+                    } else if (!esMayuscula(PASSWORD_TO_ARRAY[i]) && !primeraLetra) {
+                        console.log(PASSWORD_TO_ARRAY[i] + " no es mayuscula.") //No he sabido que instrucción poner aquí. Else If necesario para validar las pass donde hay varias letras y la primra es mayuscula
+                    } else {
+                        window.alert("La primera letra debe ser mayuscula.")
+                        passValida = false
+                        break
+                    }
+                }
+            }
+        }
+
+        if (!passValida) {
+            window.location.reload()
+        } else if (PASSWORD_TO_ARRAY.length < 8) {
+            window.location.reload()
+        } else if (!contieneNumero) {
+            window.alert("La contraseña debe contener al menos un número.")
+            window.location.reload()
+        } else if (!primeraLetraMayuscula) {
+            window.alert("La contraseña debe contener al menos una letra.")
+            window.location.reload()
+        } else {
+            window.alert("La contraseña es valida.")
+        }
+    </script>
+</body>
+</html>
