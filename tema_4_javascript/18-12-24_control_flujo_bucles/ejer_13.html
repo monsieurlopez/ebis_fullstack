@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <script>
+        const FECHA_NACIMIENTO = window.prompt("Introduce tu fecha de nacimiento (dd-mm-yyyy):");
+        const FECHA_FORMATEADA = FECHA_NACIMIENTO.split("-")
+        
+        const OPERACION1 = (Number(FECHA_FORMATEADA[0]) + Number(FECHA_FORMATEADA[1]) + Number(FECHA_FORMATEADA[2])).toString()
+        const STRING_TO_ARRAY = OPERACION1.split("")
+        if (OPERACION1.length === 1) {
+            window.alert(`Tú número de la suerte es el ${OPERACION1}`)
+        } else {
+            const OPERACION2 = (Number(STRING_TO_ARRAY[0]) + Number(STRING_TO_ARRAY[1]) + Number(STRING_TO_ARRAY[2]) + Number(STRING_TO_ARRAY[2])).toString()
+            if (OPERACION2.length === 1){
+                window.alert(`Tú número de la suerte es el ${OPERACION2}`)
+            } else {
+                const STRING_TO_ARRAY1 = OPERACION2.split("")
+                const OPERACION3 = (Number(STRING_TO_ARRAY1[0]) + Number(STRING_TO_ARRAY1[1]))
+                window.alert(`Tú número de la suerte es el ${OPERACION3}`)
+            }
+        }
+    </script>
+</body>
+</html>
