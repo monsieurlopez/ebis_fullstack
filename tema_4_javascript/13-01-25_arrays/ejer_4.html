@@ -9,18 +9,10 @@
     <script>
         let array = []
 
-        const VALOR_1 = window.prompt("Introduce un valor:")
-        const VALOR_2 = window.prompt("Introduce otro valor:")
-        const VALOR_3 = window.prompt("Introduce otro valor:")
-        const VALOR_4 = window.prompt("Introduce otro valor:")
-        const VALOR_5 = window.prompt("Introduce otro valor:")
-        const VALOR_6 = window.prompt("Introduce otro valor:")
-        const VALOR_7 = window.prompt("Introduce otro valor:")
-        const VALOR_8 = window.prompt("Introduce otro valor:")
-        const VALOR_9 = window.prompt("Introduce otro valor:")
-        const VALOR_10 = window.prompt("Introduce el último valor:")
-
-        array.push(VALOR_1, VALOR_2, VALOR_3, VALOR_4, VALOR_5, VALOR_6, VALOR_7, VALOR_8, VALOR_9, VALOR_10)
+        for (let i = 0; i < 10; i++) {
+            let valor = window.prompt("Introduce un valor:")
+            array.push(valor)
+        }
 
         for (let i = 0; i < array.length; i++) {
             console.log(array[i])
