@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        let array = []
+
+        for (let i = 0; i < 10; i++) {
+            let valor = 1
+            array.push(valor)
+        }
+        console.log(array)
+
+        let seleccion
+
+        do {
+            seleccion = Number(window.prompt("Escribe un número del 0 al 9:"))
+            array[seleccion] = seleccion * 2
+            window.alert(`La posición seleccionada es la ${seleccion} y su nuevo valor es ${seleccion*2}`)
+            console.log(array)
+        } while (seleccion >= 0 && seleccion <= 9)
+    </script>
+</body>
+</html>
