@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 13</title>
+  </head>
+  <body>
+    <script>
+        const PJ_SW = [
+            "Luke Skywalker",
+            "Darth Vader",
+            "Leia Organa",
+            "Han Solo",
+            "Yoda",
+            "Obi-Wan Kenobi",
+            "Palpatine",
+            "R2-D2",
+            "C-3PO",
+            "Chewbacca",
+        ]
+
+        console.log(PJ_SW)
+
+        const LISTA_ORDENADA = PJ_SW.sort(function(a, b) {
+            if (a < b) { return -1 }
+            if (a > b) { return 1 }
+            return 0
+        })
+
+        console.log(LISTA_ORDENADA)
+
+        const NEW_PJ = window.prompt("Introduce el nombre de un personaje de Star Wars:")
+
+        let personajeRepetido = false
+
+        for (let i = 0; i < LISTA_ORDENADA.length; i++) {
+            if (NEW_PJ === LISTA_ORDENADA[i]) {
+                window.alert(`${NEW_PJ} se encuentra en la lista de personajes de Star Wars en la posición ${i}`)
+                personajeRepetido = true
+                break
+            }
+        }
+
+        if (!personajeRepetido) {
+            LISTA_ORDENADA.push(NEW_PJ)
+            console.log(LISTA_ORDENADA)
+        }
+
+        console.log(`La lista contiene ${LISTA_ORDENADA.length} personajes`)
+    </script>
+  </body>
+</html>
