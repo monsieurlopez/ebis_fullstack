@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+<body>
+    <script>
+        const nombresAlumnos = [
+            "Carlos García Martínez",
+            "María López Sánchez",
+            "José Fernández Gómez",
+            "Ana Ruiz Jiménez",
+            "Luis Rodríguez Pérez",
+            "Carmen Vázquez Díaz",
+            "Juan Martínez Torres",
+            "Laura Sánchez Moreno",
+            "Pedro Gómez Romero",
+            "Lucía Fernández Aguilar",
+            "Francisco Ruiz Navarro",
+            "Elena García Suárez",
+            "Javier Rodríguez Castro",
+            "Sofía Díaz Ramos",
+            "Manuel Pérez Domínguez",
+            "Sara Jiménez Blanco",
+            "Antonio Torres Ortiz",
+            "Clara Vázquez García",
+            "David Romero Martínez",
+            "Paula Moreno López",
+            "Miguel Fernández Sánchez",
+            "Teresa Gómez Rodríguez",
+            "Alberto Ruiz Jiménez",
+            "Isabel Díaz Fernández",
+            "Rosa Pérez Gómez"
+        ]
+
+        let notasAlumnos = []
+
+        for (let i = 0; i < nombresAlumnos.length; i++) {
+            notas = parseFloat((Math.random() * 10).toFixed(0))
+            notasAlumnos.push(notas)
+        }
+
+        console.log(nombresAlumnos)
+        console.log(notasAlumnos)
+
+        let totalNotasClase = 0
+        for (let i = 0; i < notasAlumnos.length; i++) {
+            totalNotasClase += notasAlumnos[i]
+        }
+
+        const MEDIA_CLASE = totalNotasClase / notasAlumnos.length
+        console.log("*************************************")
+        console.log(`La nota media de la clase es ${MEDIA_CLASE}`)
+        console.log("*************************************")
+        let alumnosMejorQueMedia = []
+        for (let i = 0; i < totalNotasClase; i++) {
+            if (notasAlumnos[i] > MEDIA_CLASE) {
+                alumnosMejorQueMedia.push(nombresAlumnos[i])
+            }
+        }
+        console.log("Estos alumnos han sacado mejor nota que la media de clase:")
+        console.log(alumnosMejorQueMedia)
+        console.log("*************************************")
+
+        let notaMaxima = Math.max(...notasAlumnos)
+        console.log(`La nota máxima de clase es un ${notaMaxima}`)
+        let alumnosNotaMaxima = []
+        for (let i = 0; i < notasAlumnos.length; i++) {
+            if (notasAlumnos[i] === notaMaxima) {
+                alumnosNotaMaxima.push(nombresAlumnos[i])
+            }
+        }
+        console.log("Lista de alumnos con nota máxima:")
+        console.log(alumnosNotaMaxima)
+        console.log("*************************************")
+
+        let notaMinima = Math.min(...notasAlumnos)
+        console.log(`La nota mínima de clase es un ${notaMinima}`)
+
+        let alumnosNotaMinima = []
+        for (let i = 0; i < notasAlumnos.length; i++) {
+            if (notasAlumnos[i] === notaMaxima) {
+                alumnosNotaMinima.push(nombresAlumnos[i])
+            }
+        }
+        console.log("Lista de alumnos con nota mínima:")
+        console.log(alumnosNotaMinima)
+        console.log("*************************************")
+
+        for (let i = 0; i < nombresAlumnos.length; i++) {
+            console.log(`${nombresAlumnos[i]} - Nota: ${notasAlumnos[i]}`)
+        }
+        
+    </script>
+</body>
+</html>
