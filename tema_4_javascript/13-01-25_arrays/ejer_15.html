@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <script>
+        let numDecimales = []
+        let numEnteros = []
+        let num
+
+        do {
+            num = Number(window.prompt("Intruduce un número:"))
+            if (Number.isInteger(num)) {
+                numEnteros.push(num)
+            } else {
+                numDecimales.push(num)
+            }
+        } while (num > 0)
+
+        console.log(numEnteros)
+        console.log(numDecimales)
+
+        let sumaEnteros = 0
+
+        for (let i = 0; i < numEnteros.length; i++) {
+            sumaEnteros += numEnteros[i]
+        }
+        console.log(`La suma de todos los números enteros es ${sumaEnteros}`)
+
+        let mediaTotal = 0
+        let numeroDeDatos = numEnteros.length + numDecimales.length
+        
+        let sumaDecimales = 0
+        for (let i = 0; i < numDecimales.length; i++) {
+            sumaDecimales += numDecimales[i]
+        }
+        const MEDIA = (sumaEnteros + sumaDecimales) /  numeroDeDatos
+        console.log(`La media de todos los números es ${MEDIA}`)
+    </script>
+</body>
+</html>
