@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+  </head>
+  <body>
+    <script>
+      let array = [];
+
+      for (let i = 0; i <= 10; i++) {
+        let valor = Number(0);
+        array.push(valor);
+      }
+      console.log(array);
+
+      let seleccion
+
+        do {
+            seleccion = Number(window.prompt("Escribe un número:"))
+            if (seleccion < 0) {
+                console.log("Número" + " " + "Valor")
+                for (let i = 0; i < array.length; i++) {
+                    console.log([i] + "       " + array[i]);
+                }
+            } else if (seleccion > 10) {
+                window.alert("El número introducido es incorrecto")
+            } else {
+                array[seleccion]++
+            }
+        } while (seleccion >= 0)
+
+        console.log(array)
+    </script>
+  </body>
+</html>
