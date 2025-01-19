@@ -7,7 +7,30 @@
 </head>
 <body>
     <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        let array = []
+        let suma = 0
+        let producto = 1
+
+        for (let i = 0; i < 20; i++) {
+            let valor = getRandomInt(1, 100)
+            array.push(valor)
+            if (i % 2 == 0) {
+                suma += valor
+            } else {
+                producto *= valor
+            }
+        }
         
+        console.log(array)
+        console.log(`La suma de los número de posición par es ${suma}`)
+        console.log(`El producto de los número de posición impar es ${producto}`)
+
     </script>
 </body>
 </html>
