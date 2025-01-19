@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <script>
+        const ARRAY = ["manzana", "pera", "platano", "naranja", "albaricoque"]
+
+        const ARRAY_ORDENADO = ARRAY.sort(function(a, b) {
+            if (a < b) { return -1 }
+            if (a > b) { return 1 }
+            return 0
+        })
+
+        console.log(ARRAY)
+        console.log(ARRAY_ORDENADO)
+        
+    </script>
+</body>
+</html>
