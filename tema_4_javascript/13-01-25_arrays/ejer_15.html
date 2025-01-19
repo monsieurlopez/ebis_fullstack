@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        let array = []
+        for (let i = 0; i < 20; i++) {
+            let valor = getRandomInt(1, 9)
+            array.push(valor)
+        }
+        console.log(array)
+
+        for (let j = 1; j < 10; j++) {
+            let repeticion = 0
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === j) {
+                    repeticion++
+                }
+                
+            }
+            console.log(`El número ${j} se repite ${repeticion} veces`)
+        }
+        
+
+
+    </script>
+</body>
+</html>
