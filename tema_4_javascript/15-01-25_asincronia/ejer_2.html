@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        const descargarDatos = new Promise ((resolve, reject) => {
+            let time = 2000
+            setTimeout(() => {
+                if (getRandomInt(10) > 3) {
+                    resolve(`¡Felicidades! El archivo se ha descargado en ${time/1000} segundos.`)
+                } else {
+                    reject("Un error se ha producido. El archivo no se ha descargado correctamente.")
+                }
+            }, time);
+        })
+
+        descargarDatos
+            .then(resultado => console.log(resultado))
+            .catch(error => console.log(error))
+
+    </script>
+</body>
+</html>
