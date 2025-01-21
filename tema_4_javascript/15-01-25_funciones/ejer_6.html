@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        function division (a, b) {
+            return a / b
+        }
+
+        let num1, num2
+        do {
+            num1 = Number(window.prompt("Escribe un número:"))
+            num2 = Number(window.prompt("Escribe otro número:"))
+            window.alert("El resultado de la división es : " + division(num1, num2))
+        } while (num2 !== 0)
+
+        window.alert("No se puede dividir por 0. ¡Fin del programa!")
+    </script>
+</body>
+</html>
