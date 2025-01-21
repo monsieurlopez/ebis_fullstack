@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+            
+            function operation1() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("Operación 1 llevada a cabo con éxito")
+                    }, 1000)
+                })
+            }
+
+            function operation2() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("Operación 2 llevada a cabo con éxito")
+                    }, 1000)
+                })
+            }
+
+            function operation3() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("Operación 3 llevada a cabo con éxito")
+                    }, 1000)
+                })
+            }
+
+            operation1()
+                .then((resultado1) => {
+                    console.log(resultado1);
+                    return operation2();
+                })
+                .then((resultado2) => {
+                    console.log(resultado2);
+                    return operation3();
+                })
+                .then((resultado3) => {
+                    console.log(resultado3);
+                })
+                .catch((error) => {
+                    console.error("Se ha producido un error:", error);
+                });
+
+
+    </script>
+</body>
+</html>
