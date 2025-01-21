@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        function factorial (x) {
+            let resultado = 1
+            for (let i = 1; i <= x; i++) {
+                resultado = resultado * i
+            }
+            return resultado
+        }
+
+        const NUM = Number(window.prompt("Introduce un número:"))
+        window.alert(`El factorial de ${NUM} es : ` + factorial(NUM))
+    </script>
+</body>
+</html>
