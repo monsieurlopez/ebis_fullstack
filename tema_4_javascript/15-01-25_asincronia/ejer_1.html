@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        const TIEMPO_ESPERA = Number(window.prompt("¿En cúanto segundos quieres que salga el mensaje?"))*1000
+        
+        function temporizador(segundos, callback) {
+            setTimeout(() => console.log(`Ha salido este mensaje a los ${segundos/1000} segundos`), segundos)
+        }
+
+        temporizador(TIEMPO_ESPERA)
+    </script>
+</body>
+</html>
