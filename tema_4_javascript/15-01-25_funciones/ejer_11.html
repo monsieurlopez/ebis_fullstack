@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <script>
+        const EUROS = Number(window.prompt("Escribe la cantidad de euros que quieres cambiar:"))
+        const MENSAJE = `
+            Selecciona la moneda a la que deseas cambiar tus ${EUROS}€:
+
+            Cambio a Dolares. Pulsa 1.
+            Cambio a Libras. Pulsa 2.
+            Cambio a Yenes. Pulsa 3.
+        `
+        const SELECCION_CAMBIO = Number(window.prompt(MENSAJE))
+
+        function cambioEuros (euros, cambio) {
+            return euros * cambio
+        }
+
+        switch (SELECCION_CAMBIO) {
+            case 1:
+                const EURO_DOLAR = 1.28611
+                const RESULTADO1 = cambioEuros(EUROS, EURO_DOLAR).toFixed(4)
+                window.alert(`Tus ${EUROS} euros son ${RESULTADO1} dolares`)
+                break
+            case 2:
+                const EURO_LIBRA = 0.86
+                const RESULTADO2 = cambioEuros(EUROS, EURO_LIBRA).toFixed(4)
+                window.alert(`Tus ${EUROS} euros son ${RESULTADO2} libras`)
+                break
+            case 3:
+                const EURO_YEN = 129.852
+                const RESULTADO3 = cambioEuros(EUROS, EURO_YEN).toFixed(4)
+                window.alert(`Tus ${EUROS} euros son ${RESULTADO3} yenes`)
+                break
+            default:
+                window.alert("Has introducido una opción de cambio no valida. Intentalo de nuevo.")
+                window.location.reload()
+        }
+    </script>
+</body>
+</html>
