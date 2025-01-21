@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        function masGrande (num1, num2) {
+            if (num1 > num2) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        const NUM1 = Number(window.prompt("Escribe un número:"))
+        const NUM2 = Number(window.prompt("Escribe otro número:"))
+
+        masGrande(NUM1, NUM2)
+            ? console.log(`El primer número ${NUM1} es más grande que ${NUM2}`)
+            : console.log(`El primer número ${NUM1} no es más grande que ${NUM2}`)
+    </script>
+</body>
+</html>
