@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        const NUM = Number(window.prompt("Escribe un número entero y positivo: ")).toFixed(0)
+
+        function numeroCifras (a) {
+            return a.toString().length
+        }
+
+        if (NUM < 0) {
+            window.alert("El número introducido es negativo.")
+            window.location.reload()
+        } else {
+            window.alert(`El número ${NUM} tiene ${numeroCifras(NUM)} cifras`)
+        }
+    </script>
+</body>
+</html>
