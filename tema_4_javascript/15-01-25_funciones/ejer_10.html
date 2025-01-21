@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <script>
+        const MENSAJE = `
+            ¿De qué figura quieres calcular el área?
+
+            Pulsa 1. Círculo
+            Pulsa 2. Triángulo
+            Pulsa 3. Cuadrado
+        `
+        const FIGURA = Number(window.prompt(MENSAJE))
+
+        function areaCirculo (radio) {
+            return Math.PI * radio * radio
+        }
+        
+        function areaTriangulo (base, altura) {
+            return (base * altura) / 2
+        }
+
+        function areaCuadrado (lado) {
+            return lado * lado
+        }
+        switch (FIGURA) {
+            case 1:
+                const RADIO = Number(window.prompt("¿Cuánto mide el radio del círculo en cm?"))
+                const AREA_CIRCULO = areaCirculo(RADIO).toFixed(0)
+                window.alert(`El area del círculo cuyo radio mide ${RADIO} cm es de ${AREA_CIRCULO} cm²`)
+                break
+            case 2:
+                const BASE = Number(window.prompt("¿Cuánto mide la base del triángulo en cm?"))
+                const ALTURA = Number(window.prompt("¿Cuánto mide la altura del tríangulo en cm?"))
+                const AREA_TRIANGULO = areaTriangulo(BASE, ALTURA).toFixed(0)
+                window.alert(`El area de un tríangulo cuya base mide ${BASE} cm y tiene una altura de ${ALTURA} cm es de ${AREA_TRIANGULO} cm²`)
+                break
+            case 3:
+                const LADO = Number(window.prompt("¿Cuánto mide el lado del cuadrado en cm?"))
+                const AREA_CUADRADO = areaCuadrado(LADO).toFixed(0)
+                window.alert(`El area de un cuadrado cuyo lado mide ${LADO} cm es de ${AREA_CUADRADO} cm²`)
+                break
+            default:
+                window.alert("No has seleccionado ninguna opción valida. Intentalo de nuevo.")
+                window.location.reload()
+        }
+    </script>
+</body>
+</html>
