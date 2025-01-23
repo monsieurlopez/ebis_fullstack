@@ -3,7 +3,43 @@
     padding: 0;
 }
 
-header {
+#section_personas {
+    width: 75%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    gap: 1rem;
+}
+
+#div_persona {
+    border: 1px solid black;
     padding: 1rem;
+}
+
+#div_persona img {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 1rem;
+}
+
+h1 {
+    padding: 0.5rem;
+}
+
+/***********/
+.tarjeta {
+    width: 25em;
+    height: 16em;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.img_tarjeta {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 1rem;
 }
