@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem
+}
+
+.section {
+    padding: 10px;
+    box-sizing: border-box;
+    /*background-color: #eaeaea;*/
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+h2 {
+    background-color: #eaeaea;
+    padding: 0.5rem;
+}
+
+/*Pantallas grandes*/
+@media (min-width: 1000px) {
+    #section_productos {
+        flex: 7;
+    }
+    #section_cesta {
+        flex: 3;
+    }
+}
+
+/*Pantallas pequeñas*/
+@media (max-width: 999px) {
+    .section {
+        flex: 1 1 100%;
+    }
+}
