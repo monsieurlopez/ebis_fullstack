@@ -50,40 +50,94 @@ if (SELECCION >= 0 && SELECCION <= 6) {
 }
 
 //Pide al usuario un texto, muestra la información de las personas cuyo nombre contenta el texto escrito
-let letrasComunes = []
-function siguienteEjercicio() {
-    let texto = window.prompt("Escribe un texto:")
-    for (let i = 0; i < newPersonas.length; i++) {
-        if (newPersonas[i].nombre.toLowerCase().includes(texto.toLowerCase())) {
-            letrasComunes.push(newPersonas[i])
+let letrasComunes = [];
+
+/**
+ * Function: cardGeneratorComun
+ * Muestra unas tarjetas determinadas por la coincidencia del texto introducido y los nombres de las personas
+ * @param {string} texto texto introducido para buscar las personas
+ */
+function cardGeneratorComun(texto) {
+    if (texto === "all") {
+        letrasComunes = newPersonas
+    } else {
+        letrasComunes = [];
+
+        //Coincidencias entre texto y nombres de las personas
+        for (let i = 0; i < newPersonas.length; i++) {
+            if (newPersonas[i].nombre.toLowerCase().includes(texto.toLowerCase())) {
+                letrasComunes.push(newPersonas[i]);
+            }
         }
     }
 
-    let tarjetas = ""
-    for (let i = 0; i < letrasComunes.length; i++) {
-        tarjetas +=
-        `
-            <div id="tarjeta_${i}" class="tarjeta">
-                <img src="${letrasComunes[i].imagen}" alt="imagen de ${letrasComunes[i].nombre} class="img_tarjeta">
-                <h1>${letrasComunes[i].nombre}</h1>
-                <p><strong>Edad:</strong> ${letrasComunes[i].edad}</p>
-                <p><strong>Email:</strong> ${letrasComunes[i].email}</p>
-                <p><strong>Direccion:</strong> ${letrasComunes[i].direccion}</p>
-                <p><strong>Color de ojos:</strong> ${letrasComunes[i].color_ojos}</p>
-            </div>
-        `
-        SECTION.innerHTML = tarjetas
-    }
-    for (let i = 0; i < letrasComunes.length; i++) {
-        const DIV_TARJETA = document.getElementById(`tarjeta_${i}`)
-        DIV_TARJETA.style.backgroundColor = letrasComunes[i].color_ojos
+    if (letrasComunes.length === 0) {
+        SECTION.innerHTML = ""
+    } else {
+        //Generación de tarjetas
+        let tarjetas = "";
+        for (let i = 0; i < letrasComunes.length; i++) {
+            tarjetas += `
+                <div id="tarjeta_${i}" class="tarjeta">
+                    <img src="${letrasComunes[i].imagen}" alt="imagen de ${letrasComunes[i].nombre}" class="img_tarjeta">
+                    <h1>${letrasComunes[i].nombre}</h1>
+                    <p><strong>Edad:</strong> ${letrasComunes[i].edad}</p>
+                    <p><strong>Email:</strong> ${letrasComunes[i].email}</p>
+                    <p><strong>Direccion:</strong> ${letrasComunes[i].direccion}</p>
+                    <p><strong>Color de ojos:</strong> ${letrasComunes[i].color_ojos}</p>
+                </div>
+            `;
+            SECTION.innerHTML = tarjetas;
+        }
+
+        // Cambiar el color de fondo de las tarjetas
+        for (let i = 0; i < letrasComunes.length; i++) {
+            const DIV_TARJETA = document.getElementById(`tarjeta_${i}`);
+            DIV_TARJETA.style.backgroundColor = letrasComunes[i].color_ojos;
+        }
+
     }
 }
 
-//SECTION.innerHTML = tarjetas
+function createButtonSearch() {
+    const DIV_BOX = document.createElement("div");
+    DIV_BOX.innerHTML = `
+        <input type="text" placeholder="Texto aquí" id="text_input" class="input">
+        <button id="btn_buscar" onclick="search()" class="button">Buscar</button>
+    `;
+    SECTION.appendChild(DIV_BOX);
+
+    DIV_BOX.style.position = "absolute";
+    DIV_BOX.style.top = "0";
+    DIV_BOX.style.left = "0";
+    DIV_BOX.style.backgroundColor = "grey";
+    DIV_BOX.style.padding = "10px";
+}
+
+function siguienteEjercicio() {
+    const TEXTO = window.prompt("Escribe un texto:");
+    cardGeneratorComun(TEXTO);
+
+    setTimeout(() => {
+        ultimoEjercicio();
+    }, 6000);
+}
+
+function ultimoEjercicio() {
+    SECTION.innerHTML = "";
+    createButtonSearch()
+}
 
 setTimeout(() => {
-    siguienteEjercicio()
-}, 6000)
+    siguienteEjercicio();
+}, 6000);
+
+function search() {
+    let inputText = document.getElementById("text_input").value;
+    if (!inputText) inputText = "all";
+    cardGeneratorComun(inputText);
+    createButtonSearch()
+    inputText = ""
+}
 
 

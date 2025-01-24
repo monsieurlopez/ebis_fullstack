@@ -33,7 +33,6 @@ h1 {
 /***********/
 .tarjeta {
     width: 25em;
-    height: 16em;
     border: 1px solid black;
     padding: 1rem;
 }
