@@ -6,6 +6,17 @@
 header {
     padding: 1rem;
     text-align: center;
+    align-items: center;
+}
+
+h1 {
+    display: inline;
+}
+
+#logo{
+    display: inline;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 main {
@@ -29,6 +40,36 @@ h2 {
     padding: 0.5rem;
 }
 
+h3 {
+    padding: 0.5rem;
+    text-decoration: underline;
+}
+
+.price {
+    padding: 1rem;
+}
+
+#box_tools_productos {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.div_producto {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
 /*Pantallas grandes*/
 @media (min-width: 1000px) {
     #section_productos {
@@ -43,5 +84,16 @@ h2 {
 @media (max-width: 999px) {
     .section {
         flex: 1 1 100%;
+    }
+
+    #box_tools_productos {
+        flex-direction: column;
+        margin: auto;
+        gap: 1rem;
+    }
+
+    img_productos {
+        width: 2rem;
+        height: 2rem;
     }
 }
