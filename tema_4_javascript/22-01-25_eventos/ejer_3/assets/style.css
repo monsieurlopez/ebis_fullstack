@@ -35,14 +35,28 @@ main {
     text-align: center;
 }
 
+#section_cesta {
+    position: relative;
+}
+
 h2 {
     background-color: #eaeaea;
     padding: 0.5rem;
 }
 
+#title_cesta {
+    margin-bottom: 1rem;
+}
+
 h3 {
     padding: 0.5rem;
     text-decoration: underline;
+}
+
+#total_cesta {
+    padding: 0.5rem;
+    background-color: #eaeaea;
+    margin-top: 1rem;
 }
 
 .price {
@@ -61,6 +75,7 @@ h3 {
 .btn {
     cursor: pointer;
     padding: 1rem;
+    border-radius: 1rem;
 }
 
 .div_producto {
@@ -68,6 +83,15 @@ h3 {
     border-radius: 0.5rem;
     padding: 1rem;
     margin-top: 1rem;
+}
+
+.detalle_producto {
+    padding: 0.1rem;
+}
+
+.icono_producto {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 /*Pantallas grandes*/
