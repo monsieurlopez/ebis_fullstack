@@ -1,14 +1,12 @@
-let datos;
-
 fetch("https://gutendex.com/books")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    datos = data.results;
-    console.log(datos);
+    const DATOS = data.results;
+    console.log(DATOS);
 
-    const ARRAY_CARDS = datos.map((item) => {
+    const ARRAY_CARDS = DATOS.map((item) => {
         const imageUrl = item.formats ? item.formats["image/jpeg"] : "placeholder.jpg";
         return `
           <div class="card" style="width: 18rem;">
