@@ -8,3 +8,4 @@ Repository created to manage all the exercises completed during the training pro
 <strong>Unit 2:</strong> HTML and Web Architecture </br>
 <strong>Unit 3:</strong> CSS </br>
 <strong>Unit 4:</strong> JavaScript </br>
+<strong>Unit 5:</strong> TypeScript </br>
