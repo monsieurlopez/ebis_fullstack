@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 1rem;
+
+}
+
+#box_search {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+#text_input {
+    width: 15rem;;
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+}
