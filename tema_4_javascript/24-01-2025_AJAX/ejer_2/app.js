@@ -26,6 +26,7 @@ function buscarPersonaje(numero) {
             <img src="${IMG}" class="card-img-top" alt="${DATOS.name}">
             <div class="card-body">
               <h2 class="card-title"> ${DATOS.name} </h2>
+              <p> <strong> ID: </strong> ${DATOS._id} </p>
             </div>
              <ul class="list-group list-group-flush">
                 ${DATOS.films
