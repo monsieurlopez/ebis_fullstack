@@ -10,7 +10,8 @@
         "strictFunctionTypes": true,
         "sourceMap": true,
         "noImplicitAny": true,
-        "strict": true
+        "strict": true,
+        "resolveJsonModule": true
     },
     "exclude": [
         "node_modules",
