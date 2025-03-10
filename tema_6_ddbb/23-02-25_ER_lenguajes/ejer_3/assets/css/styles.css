@@ -1,0 +1,43 @@
+html {
+    font-size: 1rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 1.25rem;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.25rem;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+form {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-top: 0.625rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3125rem;
+    margin-bottom: 0.625rem;
+}
