@@ -1,10 +1,9 @@
-/** Tema 1: Índices **/
-/* Ejercicio 1: Creación de Índices */
+/** Ejercicio 1: Creación de Índices **/
 
 --1. Dado el siguiente esquema de tabla:--
 
 CREATE TABLE productos (
-    id INT PRIMARY KEY,
+    id_producto INT PRIMARY KEY,
     nombre VARCHAR(100),
     precio DECIMAL(10, 2),
     categoria_id INT
