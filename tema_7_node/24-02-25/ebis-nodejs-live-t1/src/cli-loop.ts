@@ -24,7 +24,7 @@ export function main() {
         showTasks();
         break;
       case "filter":
-        showTasksByName();
+        showTasksByName(rl);
         break;
       case "create":
         creationMenu();
@@ -60,8 +60,17 @@ function showTasks(): void {
  * Asks the user for a name and filters tasks that contain that name, then
  * console.log it.
  */
-function showTasksByName(): void {
-  // TODO
+function showTasksByName(rl: ReadlineInterface): void {
+  rl.question("¿Nombre de la tarea?", (name: string) => {
+    readTasks()
+      .filter((t) => t.name.includes(name))
+      .forEach((t) => {
+        console.log(`Nombre: ${t.name}`);
+        if (t.description) {
+          console.log(`Descripción: ${t.description}`);
+        }
+      });
+  });
 }
 
 /**
