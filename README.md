@@ -10,3 +10,4 @@ Repository created to manage all the exercises completed during the training pro
 <strong>Unit 4:</strong> JavaScript </br>
 <strong>Unit 5:</strong> TypeScript </br>
 <strong>Unit 6:</strong> Databases </br>
+<strong>Unit 7:</strong> Node.js </br>
