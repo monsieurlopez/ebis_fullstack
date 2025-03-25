@@ -30,7 +30,7 @@ export function main() {
         creationMenu();
         break;
       case "delete":
-        deleteTasksByIndex();
+        deleteTasksByIndex(rl);
         break;
       case "exit":
         console.log("Exiting...");
@@ -53,13 +53,12 @@ function showUsage() {
  * Reads tasks from the file and logs them to the console.
  */
 function showTasks(): void {
-  readTasks()
-    .forEach((t) => {
-      console.log(`Nombre: ${t.name}`);
-      if (t.description) {
-        console.log(`Descripción: ${t.description}`);
-      }
-    });
+  readTasks().forEach((t) => {
+    console.log(`Nombre: ${t.name}`);
+    if (t.description) {
+      console.log(`Descripción: ${t.description}`);
+    }
+  });
 }
 
 /**
@@ -84,8 +83,28 @@ function showTasksByName(rl: ReadlineInterface): void {
  * 2. Asks the user for an index and deletes the task at that index.
  * 3. If a wrong index is provided, it shows an error message.
  */
-function deleteTasksByIndex(): void {
-  // TODO
+function deleteTasksByIndex(rl: ReadlineInterface): void {
+  const tasks: Task[] = readTasks();
+  tasks.forEach((t: Task, i: number) => {
+    console.log(`Indice ${i} - Name: ${t.name}`);
+    if (t.description) {
+      console.log(`Descripción: ${t.description}`);
+    }
+  });
+
+  rl.question("¿Índice de la tarea que quieres eliminar?", (index: string) => {
+    const indiceNumber: number = Number.parseInt(index);
+
+    if (tasks.length <= indiceNumber || indiceNumber < 0) {
+      console.log("El indice no es valido");
+    } else {
+      const tasksWithoutDeletedIndex = tasks.filter(
+        (_, index) => index !== indiceNumber
+      );
+      console.log(`Tarea eliminada: ${tasks[indiceNumber].name}`);
+      writeTasks(tasksWithoutDeletedIndex);
+    }
+  });
 }
 
 function creationMenu() {
