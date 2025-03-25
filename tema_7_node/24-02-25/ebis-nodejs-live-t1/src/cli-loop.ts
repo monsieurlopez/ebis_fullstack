@@ -53,7 +53,13 @@ function showUsage() {
  * Reads tasks from the file and logs them to the console.
  */
 function showTasks(): void {
-  // TODO
+  readTasks()
+    .forEach((t) => {
+      console.log(`Nombre: ${t.name}`);
+      if (t.description) {
+        console.log(`Descripción: ${t.description}`);
+      }
+    });
 }
 
 /**
