@@ -15,6 +15,22 @@ app.get("/", (req: Request, res: Response) => {
 // All endpoints will use the file tasks.json as a way to persist the data
 
 app.get("/search", (req: Request, res: Response) => {
+  const tasks = readTasks();
+
+  const { index } = req.query;
+
+  if (index !== undefined) {
+    const indexNumber = Number(index);
+    if (indexNumber < 0 || indexNumber >= tasks.length) {
+      res.sendStatus(404);
+      return;
+    } else {
+      const task = tasks[indexNumber];
+      res.send(task);
+    }
+  } else {
+    res.send(tasks);
+  }
   // - Get all tasks if no index is given
   // - If req.query.index is provided, use that to get a task.
   // - If the index is out of bounds, return 404
