@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.redirect("/tasks");
+  res.sendFile("index.html", { root: "public" });
 });
 
 // TODO: All index-based endpoints work on a zero-based array. However, it'd be
