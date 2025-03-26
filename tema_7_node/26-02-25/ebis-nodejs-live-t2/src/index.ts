@@ -70,7 +70,7 @@ app.post("/delete", (req: Request, res: Response) => {
 
   const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
   writeTasks(updatedTasks);
-  
+
   res.sendStatus(200);
 });
 
@@ -83,7 +83,42 @@ app.post("/update", (req: Request, res: Response) => {
   // - If the index is not given, is invalid or out of bounds, a 400 is returned
   // - If the operation is successful, a 200 is returned
   // IMPORTANT: This is a POST, the data is in the body!
-  
+  const {
+    index,
+    name,
+    description,
+  }: {
+    index: string | undefined;
+    name: string | undefined;
+    description: string | undefined;
+  } = req.body;
+
+  const tasks: Task[] | undefined = readTasks();
+
+  if (!name) {
+    res.sendStatus(400).send("Name is required");
+  } else if (index === undefined) {
+    res.sendStatus(400).send("Index is undefined");
+  } else {
+    const indexNum = Number(index);
+    if (indexNum < 0 || indexNum >= tasks.length) {
+      res.sendStatus(400);
+    } else {
+      const updatedTasks: Task[] | undefined = tasks.map((task, taskIndex) => {
+        if (taskIndex === indexNum) {
+          task.name = name;
+          if (description !== undefined) {
+            task.description = description;
+          }
+        }
+        return task;
+      });
+
+      writeTasks(updatedTasks);
+
+      res.sendStatus(200);
+    }
+  }
 });
 
 // Start only if it's executed directly, not imported
