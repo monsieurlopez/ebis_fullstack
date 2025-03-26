@@ -15,6 +15,9 @@ app.get("/", (req: Request, res: Response) => {
 // All endpoints will use the file tasks.json as a way to persist the data
 
 app.get("/search", (req: Request, res: Response) => {
+  // - Get all tasks if no index is given
+  // - If req.query.index is provided, use that to get a task.
+  // - If the index is out of bounds, return 404
   const tasks = readTasks();
 
   const { index } = req.query;
@@ -31,10 +34,6 @@ app.get("/search", (req: Request, res: Response) => {
   } else {
     res.send(tasks);
   }
-  // - Get all tasks if no index is given
-  // - If req.query.index is provided, use that to get a task.
-  // - If the index is out of bounds, return 404
-  // TODO
 });
 
 app.post("/create", (req: Request, res: Response) => {
@@ -43,7 +42,16 @@ app.post("/create", (req: Request, res: Response) => {
   // - The description can be empty or not present
   // - The task is written to the file and 201 is returned
   // REMEMBER: The body is given URL Encoded (from a form)
-  // TODO
+  const { name, description } : { name: string; description: string } = req.body;
+
+  if (!name) {
+    res.sendStatus(400).send("Name is required");
+    return;
+  } else {
+    const newTask: Task = { name , description };
+    writeTasks([...readTasks(), newTask]);
+    res.sendStatus(201);
+  }
 });
 
 app.post("/delete", (req: Request, res: Response) => {
