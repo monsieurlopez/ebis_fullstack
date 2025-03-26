@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile("index.html", { root: "public" });
+  res.sendFile("form.html", { root: "public" });
 });
 
 // TODO: All index-based endpoints work on a zero-based array. However, it'd be
@@ -23,8 +23,6 @@ app.get("/tasks", (req: Request, res: Response) => {
   let tasks: Task[] = readTasks();
   if (params) {
     const { name, description, index, done } = params;
-
-    // TODO: Change how we process "index" so that it filters by a list of
     // indexes. In other words, if "/tasks?index=1,3" I'll get the tasks
     // indexed either 1 or 3 (i.e. 0 and 2 since the reindexing still applies)
 
