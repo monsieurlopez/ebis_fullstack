@@ -61,14 +61,18 @@ app.post("/delete", (req: Request, res: Response) => {
   // IMPORTANT: This is a POST, the data is in the body!
   const tasks = readTasks();
 
-  const index = req.body.index;
+  const index: string | undefined = req.body.index;
 
-  if (typeof index !== "number" || index < 0 || index >= tasks.length) {
+  const indexNum = Number(index === undefined ? "-1" : index);
+
+  if ( indexNum < 0 || indexNum >= tasks.length) {
     res.sendStatus(200);
     return;
   }
 
-  const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
+  const updatedTasks = tasks.filter(
+    (_, taskIndex) => indexNum !== taskIndex
+  );
   writeTasks(updatedTasks);
 
   res.sendStatus(200);
