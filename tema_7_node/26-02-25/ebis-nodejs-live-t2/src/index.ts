@@ -7,6 +7,7 @@ const port: number = 3000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
   res.sendFile("form.html", { root: "public" });
@@ -42,13 +43,13 @@ app.post("/create", (req: Request, res: Response) => {
   // - The description can be empty or not present
   // - The task is written to the file and 201 is returned
   // REMEMBER: The body is given URL Encoded (from a form)
-  const { name, description } : { name: string; description: string } = req.body;
+  const { name, description }: { name: string; description: string } = req.body;
 
   if (!name) {
     res.sendStatus(400).send("Name is required");
     return;
   } else {
-    const newTask: Task = { name , description };
+    const newTask: Task = { name, description };
     writeTasks([...readTasks(), newTask]);
     res.sendStatus(201);
   }
@@ -58,7 +59,19 @@ app.post("/delete", (req: Request, res: Response) => {
   // - If no req.body.index is given or it's unmatched, return 200
   // - If req.body.index is matched, remove the task from the file
   // IMPORTANT: This is a POST, the data is in the body!
-  // TODO
+  const tasks = readTasks();
+
+  const index = req.body.index;
+
+  if (typeof index !== "number" || index < 0 || index >= tasks.length) {
+    res.sendStatus(200);
+    return;
+  }
+
+  const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== index);
+  writeTasks(updatedTasks);
+  
+  res.sendStatus(200);
 });
 
 app.post("/update", (req: Request, res: Response) => {
@@ -70,7 +83,7 @@ app.post("/update", (req: Request, res: Response) => {
   // - If the index is not given, is invalid or out of bounds, a 400 is returned
   // - If the operation is successful, a 200 is returned
   // IMPORTANT: This is a POST, the data is in the body!
-  // TODO
+  
 });
 
 // Start only if it's executed directly, not imported
