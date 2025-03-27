@@ -3,3 +3,9 @@ export type Task = {
   description: string;
   isDone: boolean;
 };
+
+export type User = {
+  name: string;
+  email: string;
+  password: string;
+}

@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 import { readTasks, writeTasks } from "./file-ops";
-import { Task } from "./types";
+import { Task, User } from "./types";
 
 const app: Express = express();
 const port: number = 3000;
