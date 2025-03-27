@@ -53,9 +53,21 @@ app.get("/tasks", (req: Request, res: Response) => {
 
   res.send(tasks);
 });
-app.get("/tasks/:id", (req: Request, res: Response) => {
-  // TODO
-  res.send("Not implemented");
+app.post("/tasks", (req: Request, res: Response) => {
+  const {
+    name,
+    description,
+    isDone,
+  }: { name: string; description: string; isDone: boolean } = req.body;
+
+  if (!name) {
+    res.status(400).send("Bad request");
+    return;
+  }
+  const newTask: Task = { name, description, isDone };
+
+  writeTasks([...readTasks(), newTask]);
+  res.status(201).send("New task created");
 });
 
 app.post("/tasks", (req: Request, res: Response) => {
@@ -75,8 +87,17 @@ app.post("/tasks", (req: Request, res: Response) => {
 });
 
 app.delete("/tasks/:index", (req: Request, res: Response) => {
-  // TODO: find and delete the task by index. If not found -> return 200
-  res.send("Not implemented");
+
+  const { index } = req.params;
+  const indexNumber = Number(index);
+  const tasks : Task[] = readTasks();
+
+  const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== indexNumber);
+
+  if (tasks.length > updatedTasks.length) {
+    writeTasks(updatedTasks);
+  }
+  res.status(201).send(`Task ${index} deleted`);
 });
 
 app.put("/tasks/:index", (req: Request, res: Response) => {

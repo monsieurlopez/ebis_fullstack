@@ -8,5 +8,13 @@
     "name": "Tarea 2",
     "description": "Otra descripción",
     "isDone": false
+  },
+  {
+    "name": "New tast from Postman",
+    "description": "New description for the task"
+  },
+  {
+    "name": "Tarea 4",
+    "description": "Send from Postman"
   }
 ]
