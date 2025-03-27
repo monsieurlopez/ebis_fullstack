@@ -1,5 +1,5 @@
 import express, { Express, Request, Response } from "express";
-import { readTasks, writeTasks } from "./file-ops";
+import { readTasks, writeTasks, readUsers, writeUsers } from "./file-ops";
 import { Task, User } from "./types";
 
 const app: Express = express();
@@ -140,6 +140,40 @@ app.put("/tasks/:index", (req: Request, res: Response) => {
 //
 // GET /users
 // Return for each user the name and email, but not the password
+app.get("/users", (req: Request, res: Response) => {
+  const params = req.query;
+
+  let users: User[] = readUsers();
+  if (params) {
+    const { name, email, index } = params;
+    // indexes. In other words, if "/tasks?index=1,3" I'll get the tasks
+    // indexed either 1 or 3 (i.e. 0 and 2 since the reindexing still applies)
+
+    users = users.filter((user: User, userIndex: number) => {
+      if (
+        name &&
+        !user.name.toLowerCase().includes(String(name).toLowerCase())
+      ) {
+        return false;
+      }
+      if (
+        email &&
+        !user.email
+          .toLowerCase()
+          .includes(String(email).toLowerCase())
+      ) {
+        return false;
+      }
+      if (index && userIndex != Number(index)) {
+        return false;
+      }
+      return true;
+    });
+  }
+
+  const usersWithoutPassword = users.map(({password, ...user}) => user )
+  res.send(usersWithoutPassword);
+});
 //
 // GET /users/:index
 // Return a user (again no password) by index. 404 if it doesn't exist
