@@ -5,13 +5,10 @@
     "isDone": true
   },
   {
-    "name": "Tarea 2",
-    "description": "Otra descripción",
     "isDone": false
   },
   {
-    "name": "New tast from Postman",
-    "description": "New description for the task"
+    "isDone": false
   },
   {
     "name": "Tarea 4",

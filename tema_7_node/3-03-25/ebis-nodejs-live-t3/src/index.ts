@@ -87,12 +87,13 @@ app.post("/tasks", (req: Request, res: Response) => {
 });
 
 app.delete("/tasks/:index", (req: Request, res: Response) => {
-
   const { index } = req.params;
   const indexNumber = Number(index);
-  const tasks : Task[] = readTasks();
+  const tasks: Task[] = readTasks();
 
-  const updatedTasks = tasks.filter((_, taskIndex) => taskIndex !== indexNumber);
+  const updatedTasks = tasks.filter(
+    (_, taskIndex) => taskIndex !== indexNumber
+  );
 
   if (tasks.length > updatedTasks.length) {
     writeTasks(updatedTasks);
@@ -106,7 +107,7 @@ app.put("/tasks/:index", (req: Request, res: Response) => {
   // TODO: The update follows the same rules as the creation:
   // - If data is bad (name not there or empty), return 400
   // - If type is bad for any field (e.g. int for name), also return 400
-  // - If there's a repeated name (case insensitive, not the target task), return 409
+  // - If there's a repeated name (case insensitive, not the target task), return 400
 
   const toBeUpdated: Task | undefined = readTasks().find(
     (_, index: number) => index === Number(req.params.index)
@@ -140,7 +141,7 @@ app.put("/tasks/:index", (req: Request, res: Response) => {
 //
 // GET /users
 // Return for each user the name and email, but not the password
-app.get("/users", (req: Request, res: Response) => {
+app.put("/users", (req: Request, res: Response) => {
   const params = req.query;
 
   let users: User[] = readUsers();
@@ -158,9 +159,7 @@ app.get("/users", (req: Request, res: Response) => {
       }
       if (
         email &&
-        !user.email
-          .toLowerCase()
-          .includes(String(email).toLowerCase())
+        !user.email.toLowerCase().includes(String(email).toLowerCase())
       ) {
         return false;
       }
@@ -171,12 +170,53 @@ app.get("/users", (req: Request, res: Response) => {
     });
   }
 
-  const usersWithoutPassword = users.map(({password, ...user}) => user )
+  const usersWithoutPassword = users.map(({ password, ...user }) => user);
   res.send(usersWithoutPassword);
 });
-//
+
 // GET /users/:index
 // Return a user (again no password) by index. 404 if it doesn't exist
+app.get("/users/:index", (req: Request, res: Response) => {
+  const users: User[] = readUsers();
+  const userIndex = Number(req.params.index);
+
+  if (userIndex < 0 || userIndex >= users.length || isNaN(userIndex)) {
+    res.status(404).send("User not found");
+    return;
+  }
+
+  const { password, ...userWithoutPassword } = users[userIndex];
+
+  res.send(userWithoutPassword);
+});
+
+//TODO: The update follows the same rules as the creation:
+// - If data is bad (name not there or empty), return 400
+// - If type is bad for any field (e.g. int for name), also return 400
+// - If there's a repeated name (case insensitive, not the target task), return 400
+app.put("/users/:index", (req: Request, res: Response) => {
+  const toBeUpdated: User | undefined = readUsers().find(
+    (_, index: number) => index === Number(req.params.index)
+  );
+
+  if (toBeUpdated === undefined) {
+    res.status(404).send("Not Found");
+  } else {
+    const { name, email, password, index } = req.body;
+    const updatedUser = { name, email, password, index };
+    writeUsers(
+      readUsers().map((user: User, index: number) => {
+        if (index === Number(req.params.index)) {
+          return updatedUser;
+        } else {
+          return user;
+        }
+      })
+    );
+
+    res.send();
+  }
+});
 //
 // POST /register
 // Create a new user, all three fields are required and must be a string
@@ -188,10 +228,59 @@ app.get("/users", (req: Request, res: Response) => {
 // - Then some more text
 // If any of these constraints fail -> return a 400
 // Otherwise create the user and return a 201
-//
+app.post("/register", (req: Request, res: Response) => {
+  const {
+    name,
+    email,
+    password,
+  }: { name: string; email: string; password: string } = req.body;
+
+  if (
+    typeof name !== "string" ||
+    typeof email !== "string" ||
+    typeof password !== "string"
+  ) {
+    res.status(400).send("All fields must be strings");
+    return;
+  }
+
+  const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+  if (!emailRegex.test(email)) {
+    res.status(400).send("Invalid email format");
+    return;
+  }
+
+  const users = readUsers();
+  users.push({ name, email, password });
+  writeUsers(users);
+
+  res.status(201).send("User created successfully");
+});
 // POST /login
 // Receive an email and a password
 // Return 200 if both match a user in the file, otherwise 401
+app.post("/login", (req: Request, res: Response) => {
+  const { email, password }: { email: string; password: string } = req.body;
+  if (!email || !password) {
+    res.status(400).send("Email and password are required");
+    return;
+  }
+
+  if (typeof email !== "string" || typeof password !== "string") {
+    res.status(400).send("Email and password must be strings");
+    return;
+  }
+
+  const users = readUsers();
+  const user = users.find((u) => u.email === email && u.password === password);
+
+  if (!user) {
+    res.status(401).send("Invalid email or password");
+    return;
+  }
+
+  res.status(200).send("Login successful");
+});
 
 // Start only if it's executed directly, not imported
 if (require.main === module) {
