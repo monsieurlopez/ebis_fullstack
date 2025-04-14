@@ -33,7 +33,7 @@ if (!dbName) {
   process.exit("DB_NAME is required");
 }
 
-export { client, dbName as String };
+export { client, dbName };
 
 // Only run this if the file is executed directly
 if (require.main === module && process.argv.includes("--test")) {
