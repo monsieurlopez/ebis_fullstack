@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Tarea 1",
+    "description": "Descripción de la tarea 1",
+    "isDone": true
+  },
+  {
+    "name": "Tarea 2",
+    "description": "Otra descripción",
+    "isDone": false
+  }
+]
