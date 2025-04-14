@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from "fs";
-import { Task, User } from "src/types";
+import { Task, User } from "../src/types";
 const tasksFile = "db/tasks.json";
 const usersFile = "db/users.json";
 
