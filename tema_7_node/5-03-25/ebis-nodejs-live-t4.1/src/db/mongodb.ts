@@ -30,7 +30,8 @@ const client = new MongoClient(mongoConfig.getURI(), {
 
 const dbName = process.env.DB_NAME;
 if (!dbName) {
-  process.exit("DB_NAME is required");
+  console.error("DB_NAME is required");
+  process.exit(1);
 }
 
 export { client, dbName };
@@ -55,3 +56,6 @@ if (require.main === module && process.argv.includes("--test")) {
 
   main().catch(console.error);
 }
+
+
+

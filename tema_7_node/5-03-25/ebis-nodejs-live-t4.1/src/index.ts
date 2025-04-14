@@ -8,10 +8,10 @@ import {
   UpdateResult,
   WithId,
 } from "mongodb";
-import { client, dbName } from "./db/mongodb";
+import { client, dbName } from "../src/db/mongodb";
 
 const app: Express = express();
-const port: number = 3000;
+const port: number | string = process.env.PORT ?? 3000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
