@@ -18,5 +18,5 @@
         </li>
     </ul>
 
-    <a href="{{ route('form.show') }}" class="btn btn-secondary mt-3">Volver al formulario</a>
+    <a href="{{ route('form.show') }}" class="btn btn-secondary mt-3 btn-sm">Volver al formulario</a>
 @endsection

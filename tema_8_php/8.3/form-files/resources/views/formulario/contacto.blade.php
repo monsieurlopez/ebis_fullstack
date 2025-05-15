@@ -13,7 +13,7 @@
         <div class="alert alert-danger"> {{ session('error') }} </div>
     @endif
 
-    <form action="{{ route('form.process') }}" method="POST" class="w-75 mx-auto text-center flex-column mt-3">
+    <form action="{{ route('form.process') }}" method="POST" class="text-center flex-column mt-3">
         @csrf
 
         <div class="mb-3">
