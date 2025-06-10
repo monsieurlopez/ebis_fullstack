@@ -12,3 +12,4 @@ Repository created to manage all the exercises completed during the training pro
 <strong>Unit 6:</strong> Databases </br>
 <strong>Unit 7:</strong> Node.js </br>
 <strong>Unit 8:</strong> PHP </br>
+<strong>Unit 9:</strong> React </br>
