@@ -1,6 +1,6 @@
 import { IconLinkedin } from '../assets/Icons/Linkedin';
 
-export const LinkedinSocial = () => {
+export const LinkedinSocial: React.FC = () => {
   return (
     <a
       href="https://www.linkedin.com/in/lopez-ruiz-sergio/"

@@ -1,7 +1,7 @@
 import { LinkedinSocial } from '../components/LinkedinSocial.tsx';
 import { GithubSocial } from '../components/GithubSocial.tsx';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   const currentYear: number = new Date().getFullYear();
   return (
     <footer className="w-full h-16 bg-white">

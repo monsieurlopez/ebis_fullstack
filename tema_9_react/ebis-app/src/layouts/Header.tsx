@@ -1,7 +1,7 @@
 import { Navbar } from './Navbar';
 import { useEffect } from 'react';
 
-export const Header = () => {
+export const Header: React.FC = () => {
   useEffect(() => {}, []);
   return (
     <header className="w-full absolute top-0 left-0 z-50 bg-white">

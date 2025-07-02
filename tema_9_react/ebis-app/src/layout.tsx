@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import { Header } from './layouts/Header.tsx';
 import { Footer } from './layouts/Footer.tsx';
-import { Main } from './layouts/Main.tsx';
+import Main from './layouts/Main.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

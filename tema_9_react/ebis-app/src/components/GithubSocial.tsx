@@ -1,6 +1,6 @@
 import { IconGithub } from '../assets/Icons/Github.tsx';
 
-export const GithubSocial = () => {
+export const GithubSocial: React.FC = () => {
   return (
     <a
       href="https://github.com/monsieurlopez"
