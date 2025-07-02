@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 export const Header: React.FC = () => {
   useEffect(() => {}, []);
   return (
-    <header className="w-full absolute top-0 left-0 z-50 bg-white">
+    <header className="w-full top-0 z-50 bg-white">
       <Navbar />
     </header>
   );
