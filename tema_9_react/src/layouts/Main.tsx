@@ -9,6 +9,7 @@ import {
   ListaItems,
   Notificacion,
   EstadoTarea,
+  ListaTareas
 } from '../components/indexComponets';
 
 const Main: React.FC = () => {
@@ -24,6 +25,14 @@ const Main: React.FC = () => {
     { id: 8, name: 'Erling Haaland' },
     { id: 9, name: 'Mohamed Salah' },
     { id: 10, name: 'Sadio Mane' },
+  ];
+
+  //* Para el componente ListaTareas *//
+  const tareasDemo = [
+    { id: 1, titulo: 'Estudiar React', completada: true },
+    { id: 2, titulo: 'Leer documentación de TypeScript', completada: false },
+    { id: 3, titulo: 'Practicar con proyectos', completada: true },
+    { id: 4, titulo: 'Hacer ejercicios de lógica', completada: false },
   ];
   return (
     <main className="flex-grow w-full m-auto bg-white mt-18 text-center justify-items-center mb-3">
@@ -156,6 +165,13 @@ const Main: React.FC = () => {
       <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
         <EstadoTarea completada={true} />
         <EstadoTarea completada={false} />
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Listado de Tareas:</h2>
+      <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
+        <ListaTareas tareas={tareasDemo} />
       </div>
     </main>
   );

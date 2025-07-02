@@ -6,3 +6,4 @@ export { Perfil } from './Perfil';
 export { Tarjeta } from './Tarjeta';
 export { Notificacion } from './Notificacion';
 export { EstadoTarea } from './EstadoTarea';
+export { ListaTareas } from './ListaTareas';
