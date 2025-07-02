@@ -1,5 +1,6 @@
 import React from 'react';
 import Formulario, { InputText, SubmitButton } from '../components/Formulario';
+import { CustomButton } from '../components/CustomButton';
 
 const Main: React.FC = () => {
   return (
@@ -16,6 +17,39 @@ const Main: React.FC = () => {
       <div className="max-w-md">
         <InputText label="Campo aislado" value="" onChange={() => {}} />
         <SubmitButton text="Botón aislado" />
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Botones Personalizados:</h2>
+      <div className="max-w-md display-inline space-x-1">
+        <CustomButton
+          onClick={() => {
+            console.log('Click default');
+          }}
+        />
+        <CustomButton
+          text="Button 2"
+          onClick={() => {
+            console.log('Click button 2');
+          }}
+        />
+        <CustomButton
+          text="Button 3"
+          color="gray"
+          size="lg"
+          onClick={() => {
+            console.log('Click button 3');
+          }}
+        />
+        <CustomButton
+          text="Button 4"
+          color="red"
+          size="xs"
+          onClick={() => {
+            console.log('Click button 4');
+          }}
+        />
       </div>
     </main>
   );
