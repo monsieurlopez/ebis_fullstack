@@ -2,14 +2,16 @@ import 'flowbite';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-//import App from './App.tsx';
 import { Header } from './layouts/Header.tsx';
 import { Footer } from './layouts/Footer.tsx';
+import { Main } from './layouts/Main.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
-    {/*<App /> */}
-    <Footer />
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
   </StrictMode>
 );
