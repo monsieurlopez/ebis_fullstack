@@ -1,8 +1,10 @@
 import React from 'react';
+import LogoReact from '../assets/react.svg';
+
 import Formulario, { InputText, SubmitButton } from '../components/Formulario';
 import { CustomButton } from '../components/CustomButton';
 import { Tarjeta } from '../components/Tarjeta';
-import LogoReact from '../assets/react.svg';
+import { Perfil } from '../components/Perfil';
 
 const Main: React.FC = () => {
   return (
@@ -90,6 +92,24 @@ const Main: React.FC = () => {
             <path d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z" />
           </svg>
         </Tarjeta>
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Perfiles:</h2>
+      <div className="flex flex-wrap max-auto gap-2">
+        <div>
+          <h2 className="text-xl font-semibold mb-2">Usuario 1</h2>
+          <Perfil nombre="John Doe" correo="john@example.com" edad={30} />
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">Usuario 2</h2>
+          <Perfil nombre="John Doe" edad={30} />
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold mb-2">Usuario 3</h2>
+          <Perfil correo="john@example.com" edad={30} />
+        </div>
       </div>
     </main>
   );
