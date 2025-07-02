@@ -7,6 +7,7 @@ import {
   Tarjeta,
   Perfil,
   ListaItems,
+  Notificacion,
 } from '../components/indexComponets';
 
 const Main: React.FC = () => {
@@ -133,6 +134,19 @@ const Main: React.FC = () => {
       <h2 className="text-xl font-semibold mb-2">Lista de Elementos:</h2>
       <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
         <ListaItems items={datos} />
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Notificaciones:</h2>
+      <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
+        <Notificacion message="Mensaje de éxito" color="green" id={'exito'} />
+        <Notificacion
+          message="Mensaje de alerta"
+          color="yellow"
+          id={'alerta'}
+        />
+        <Notificacion message="Mensaje de error" color="red" id={'error'} />
       </div>
     </main>
   );

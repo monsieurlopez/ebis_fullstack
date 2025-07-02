@@ -4,3 +4,4 @@ export { LinkedinSocial } from './LinkedinSocial';
 export { ListaItems } from './ListaItems';
 export { Perfil } from './Perfil';
 export { Tarjeta } from './Tarjeta';
+export { Notificacion } from './Notificacion';
