@@ -8,6 +8,7 @@ import {
   Perfil,
   ListaItems,
   Notificacion,
+  EstadoTarea,
 } from '../components/indexComponets';
 
 const Main: React.FC = () => {
@@ -25,7 +26,7 @@ const Main: React.FC = () => {
     { id: 10, name: 'Sadio Mane' },
   ];
   return (
-    <main className="flex-grow w-full m-auto bg-white mt-18 text-center justify-items-center">
+    <main className="flex-grow w-full m-auto bg-white mt-18 text-center justify-items-center mb-3">
       <h1 className="text-2xl font-bold mb-4">Demo de Formulario en TSX</h1>
       {/* ✅ Usamos el componente principal */}
       <Formulario />
@@ -147,6 +148,14 @@ const Main: React.FC = () => {
           id={'alerta'}
         />
         <Notificacion message="Mensaje de error" color="red" id={'error'} />
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Estado de las Tareas:</h2>
+      <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
+        <EstadoTarea completada={true} />
+        <EstadoTarea completada={false} />
       </div>
     </main>
   );
