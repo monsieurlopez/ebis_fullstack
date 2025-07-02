@@ -2,11 +2,27 @@ import React from 'react';
 import LogoReact from '../assets/react.svg';
 
 import Formulario, { InputText, SubmitButton } from '../components/Formulario';
-import { CustomButton } from '../components/CustomButton';
-import { Tarjeta } from '../components/Tarjeta';
-import { Perfil } from '../components/Perfil';
+import {
+  CustomButton,
+  Tarjeta,
+  Perfil,
+  ListaItems,
+} from '../components/indexComponets';
 
 const Main: React.FC = () => {
+  //* Para el componente ListaItems *//
+  const datos = [
+    { id: 1, name: 'Cristiano Ronaldo' },
+    { id: 2, name: 'Lionel Messi' },
+    { id: 3, name: 'Luis Suarez' },
+    { id: 4, name: 'Neymar Jr' },
+    { id: 5, name: 'Kylian Mbappe' },
+    { id: 6, name: 'Robert Lewandowski' },
+    { id: 7, name: 'Harry Kane' },
+    { id: 8, name: 'Erling Haaland' },
+    { id: 9, name: 'Mohamed Salah' },
+    { id: 10, name: 'Sadio Mane' },
+  ];
   return (
     <main className="flex-grow w-full m-auto bg-white mt-18 text-center justify-items-center">
       <h1 className="text-2xl font-bold mb-4">Demo de Formulario en TSX</h1>
@@ -110,6 +126,13 @@ const Main: React.FC = () => {
           <h2 className="text-xl font-semibold mb-2">Usuario 3</h2>
           <Perfil correo="john@example.com" edad={30} />
         </div>
+      </div>
+
+      <hr className="my-8" />
+
+      <h2 className="text-xl font-semibold mb-2">Lista de Elementos:</h2>
+      <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
+        <ListaItems items={datos} />
       </div>
     </main>
   );

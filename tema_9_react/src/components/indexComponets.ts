@@ -1,0 +1,6 @@
+export { CustomButton } from './CustomButton';
+export { GithubSocial } from './GithubSocial';
+export { LinkedinSocial } from './LinkedinSocial';
+export { ListaItems } from './ListaItems';
+export { Perfil } from './Perfil';
+export { Tarjeta } from './Tarjeta';
