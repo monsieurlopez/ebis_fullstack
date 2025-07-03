@@ -9,15 +9,10 @@ import {
   Pagination,
 } from "@chakra-ui/react";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
-
-type Product = {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-};
+import type { Product } from "@/data/ItemsTable";
 
 type ProductTableProps = {
+  title?: string;
   items: Product[];
   variant?: "line" | "outline";
   colorPalette?:
@@ -38,6 +33,7 @@ type ProductTableProps = {
 };
 
 export const CreateTable = ({
+  title = "Tabla",
   items,
   variant = "line",
   colorPalette = "gray",
@@ -60,33 +56,40 @@ export const CreateTable = ({
 
   return (
     <Stack width="full" gap="5">
-      <Heading size="xl">Products</Heading>
-
-      <Table.Root
-        variant={variant}
-        colorPalette={colorPalette}
-        size={size}
-        stickyHeader={stickyHeader}
-        interactive={interactive}
-      >
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeader>Product</Table.ColumnHeader>
-            <Table.ColumnHeader>Category</Table.ColumnHeader>
-            <Table.ColumnHeader textAlign="end">Price</Table.ColumnHeader>
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          {currentItems.map((item) => (
-            <Table.Row key={item.id}>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.category}</Table.Cell>
-              <Table.Cell textAlign="end">${item.price.toFixed(2)}</Table.Cell>
+      <Heading size="xl">{title}</Heading>
+      <Table.ScrollArea maxW="3xl">
+        <Table.Root
+          variant={variant}
+          colorPalette={colorPalette}
+          size={size}
+          stickyHeader={stickyHeader}
+          interactive={interactive}
+        >
+          <Table.Header>
+            <Table.Row>
+              <Table.ColumnHeader>Product</Table.ColumnHeader>
+              <Table.ColumnHeader>Category</Table.ColumnHeader>
+              <Table.ColumnHeader>Model</Table.ColumnHeader>
+              <Table.ColumnHeader>Brand</Table.ColumnHeader>
+              <Table.ColumnHeader textAlign="end">Price</Table.ColumnHeader>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table.Root>
+          </Table.Header>
+
+          <Table.Body>
+            {currentItems.map((item) => (
+              <Table.Row key={item.id}>
+                <Table.Cell>{item.name}</Table.Cell>
+                <Table.Cell>{item.category}</Table.Cell>
+                <Table.Cell>{item.model}</Table.Cell>
+                <Table.Cell>{item.brand}</Table.Cell>
+                <Table.Cell textAlign="end">
+                  ${item.price.toFixed(2)}
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table.Root>
+      </Table.ScrollArea>
 
       <Text textAlign="center">
         Página {page} de {totalPages}

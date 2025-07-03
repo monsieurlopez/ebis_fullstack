@@ -7,7 +7,8 @@ function App() {
     <>
       <CreateTable
         items={items}
-        variant="outline"
+        title="Productos"
+        variant="line"
         colorPalette="gray"
         size="lg"
         stickyHeader
