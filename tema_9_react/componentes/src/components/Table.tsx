@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { InsiderTrade } from '../data/insider_trades';
+import { LinkButton } from '../components/LinkButton';
 
 type CreateTableProps = {
   items: InsiderTrade[];
@@ -12,14 +13,14 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
 
   // Obtener las claves de los objetos para usarlas como headers
   const columns: (keyof InsiderTrade)[] = [
-    'insider_name',
-    'insider_title',
-    'transaction_date',
-    'security_type',
-    'transaction_type',
+    'name',
+    'title',
+    'date',
+    'stock',
+    'transaction',
     'amount',
     'price',
-    'document_url',
+    'document',
   ];
 
   // Filtrar items según searchTerm buscando en todas las columnas (propiedades)
@@ -243,15 +244,19 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                 <input type="checkbox" className="w-4 h-4" />
               </td>
               {columns.map((col) => {
-                const value = item[col];
+                const value = item[col as keyof typeof item];
 
                 return (
                   <td key={col} className="px-8 py-4">
-                    {col === 'price'
-                      ? `$${value}`
-                      : value instanceof Date
-                        ? value.toLocaleDateString()
-                        : value}
+                    {col === 'document' ? (
+                      <LinkButton url={value as string} />
+                    ) : col === 'price' ? (
+                      `$${value}`
+                    ) : value instanceof Date ? (
+                      value.toLocaleDateString()
+                    ) : (
+                      value
+                    )}
                   </td>
                 );
               })}
