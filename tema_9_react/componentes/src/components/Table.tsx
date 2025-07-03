@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type { Product } from '../data/items';
+import type { InsiderTrade } from '../data/insider_trades';
 
 type CreateTableProps = {
-  items: Product[];
+  items: InsiderTrade[];
   pageSize?: number;
 };
 
@@ -11,19 +11,27 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   // Obtener las claves de los objetos para usarlas como headers
-  const columns = items.length > 0 ? Object.keys(items[0]) : [];
+  const columns: (keyof InsiderTrade)[] = [
+    'insider_name',
+    'insider_title',
+    'transaction_date',
+    'security_type',
+    'transaction_type',
+    'amount',
+    'price',
+    'document_url',
+  ];
 
   // Filtrar items según searchTerm buscando en todas las columnas (propiedades)
   const filteredItems = items.filter((item) =>
     columns.some((col) =>
-      String(item[col as keyof Product])
+      String(item[col as keyof InsiderTrade])
         .toLowerCase()
         .includes(searchTerm.toLowerCase())
     )
   );
 
   const totalItems = filteredItems.length;
-
   const totalPages = Math.ceil(totalItems / pageSize);
 
   const handlePageChange = (page: number) => {
@@ -47,12 +55,12 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const endItem = Math.min(currentPage * pageSize, totalItems);
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
       <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
         <div>
+          {/* Dropdown menu */}
           <button
             id="dropdownRadioButton"
-            // data-dropdown-toggle="dropdownRadio" // Esto es para JS externo, manejar con estado si quieres
             className="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
             type="button"
           >
@@ -180,6 +188,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
             </ul>
           </div>
         </div>
+        {/* Barra de búsqueda */}
         <label htmlFor="table-search" className="sr-only">
           Search
         </label>
@@ -227,17 +236,25 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         <tbody>
           {paginatedItems.map((item, index) => (
             <tr
-              key={item.id || index}
+              key={index}
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <td className="w-4 p-4">
                 <input type="checkbox" className="w-4 h-4" />
               </td>
-              {columns.map((col) => (
-                <td key={col} className="px-8 py-4">
-                  {col === 'price' ? `$${item[col]}` : item[col]}
-                </td>
-              ))}
+              {columns.map((col) => {
+                const value = item[col];
+
+                return (
+                  <td key={col} className="px-8 py-4">
+                    {col === 'price'
+                      ? `$${value}`
+                      : value instanceof Date
+                        ? value.toLocaleDateString()
+                        : value}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>
