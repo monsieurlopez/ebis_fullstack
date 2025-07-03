@@ -8,9 +8,23 @@ type CreateTableProps = {
 
 export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const totalItems = items.length;
-  const totalPages = Math.ceil(totalItems / pageSize);
+
+  // Obtener las claves de los objetos para usarlas como headers
+  const columns = items.length > 0 ? Object.keys(items[0]) : [];
+
+  // Filtrar items según searchTerm buscando en todas las columnas (propiedades)
+  const filteredItems = items.filter((item) =>
+    columns.some((col) =>
+      String(item[col as keyof Product])
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+    )
+  );
+
+  const totalPages = Math.ceil(filteredItems.length / pageSize);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -18,16 +32,19 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     }
   };
 
-  const paginatedItems = items.slice(
+  // Resetea la página a 1 cuando cambia la búsqueda
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const paginatedItems = filteredItems.slice(
     (currentPage - 1) * pageSize,
     currentPage * pageSize
   );
 
   const startItem = (currentPage - 1) * pageSize + 1;
-  const endItem = Math.min(currentPage * pageSize, totalItems);
-
-  // Obtener las claves de los objetos para usarlas como headers
-  const columns = items.length > 0 ? Object.keys(items[0]) : [];
+  const endItem = Math.min(currentPage * pageSize, filteredItems.length);
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
@@ -69,7 +86,6 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
           <div
             id="dropdownRadio"
             className="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600"
-            // data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top" style={{position: "absolute", inset: "auto auto 0px 0px", margin: 0, transform: "translate3d(522.5px, 3847.5px, 0px)"}}
           >
             <ul
               className="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
@@ -188,6 +204,8 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
             id="table-search"
             className="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search for items"
+            value={searchTerm}
+            onChange={handleSearchChange}
           />
         </div>
       </div>
@@ -233,11 +251,11 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Showing{' '}
           <span className="font-semibold text-gray-900 dark:text-white">
-            {startItem}-{endItem}
+            {filteredItems.length === 0 ? 0 : startItem}-{endItem}
           </span>{' '}
           of{' '}
           <span className="font-semibold text-gray-900 dark:text-white">
-            {totalItems}
+            {filteredItems.length}
           </span>
         </span>
         <ul className="inline-flex -space-x-px text-sm h-8">
