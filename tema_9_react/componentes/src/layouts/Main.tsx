@@ -179,7 +179,7 @@ const Main: React.FC = () => {
 
       <h2 className="text-xl font-semibold mb-2">Tabla:</h2>
       <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
-        <CreateTable items={items} />
+        <CreateTable items={items} pageSize={10} />
       </div>
     </main>
   );

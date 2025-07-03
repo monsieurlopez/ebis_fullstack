@@ -5,6 +5,7 @@ export interface Product {
   price: number;
   model: string;
   brand: string;
+  [key: string]: string | number;
 }
 
 export const items: Product[] = [
