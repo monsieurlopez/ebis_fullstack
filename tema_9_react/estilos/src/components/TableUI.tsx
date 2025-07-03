@@ -32,7 +32,7 @@ type ProductTableProps = {
   pageSize?: number;
 };
 
-export const CreateTable = ({
+export const CreateTableUI = ({
   title = "Tabla",
   items,
   variant = "line",

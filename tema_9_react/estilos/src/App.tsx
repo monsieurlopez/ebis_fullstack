@@ -1,20 +1,22 @@
 import "./App.css";
-import { CreateTable } from "./components/Table";
+import { CreateTableUI } from "./components/TableUI";
 import { items } from "./data/ItemsTable";
 
 function App() {
   return (
     <>
-      <CreateTable
-        items={items}
-        title="Productos"
-        variant="line"
-        colorPalette="gray"
-        size="lg"
-        stickyHeader
-        interactive
-        pageSize={10}
-      />
+      <div className="flex gap-4 items-center justify-between">
+        <CreateTableUI
+          items={items}
+          title="Chakra UI Table"
+          variant="line"
+          colorPalette="gray"
+          size="lg"
+          stickyHeader
+          interactive
+          pageSize={10}
+        />
+      </div>
     </>
   );
 }
