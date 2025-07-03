@@ -1,7 +1,21 @@
 import "./App.css";
+import { CreateTable } from "./components/Table";
+import { items } from "./data/ItemsTable";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <CreateTable
+        items={items}
+        variant="outline"
+        colorPalette="gray"
+        size="lg"
+        stickyHeader
+        interactive
+        pageSize={10}
+      />
+    </>
+  );
 }
 
 export default App;
