@@ -10,8 +10,6 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const totalItems = items.length;
-
   // Obtener las claves de los objetos para usarlas como headers
   const columns = items.length > 0 ? Object.keys(items[0]) : [];
 
@@ -24,7 +22,9 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     )
   );
 
-  const totalPages = Math.ceil(filteredItems.length / pageSize);
+  const totalItems = filteredItems.length;
+
+  const totalPages = Math.ceil(totalItems / pageSize);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -44,7 +44,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   );
 
   const startItem = (currentPage - 1) * pageSize + 1;
-  const endItem = Math.min(currentPage * pageSize, filteredItems.length);
+  const endItem = Math.min(currentPage * pageSize, totalItems);
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-5">
@@ -251,11 +251,11 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           Showing{' '}
           <span className="font-semibold text-gray-900 dark:text-white">
-            {filteredItems.length === 0 ? 0 : startItem}-{endItem}
+            {totalItems === 0 ? 0 : startItem}-{endItem}
           </span>{' '}
           of{' '}
           <span className="font-semibold text-gray-900 dark:text-white">
-            {filteredItems.length}
+            {totalItems}
           </span>
         </span>
         <ul className="inline-flex -space-x-px text-sm h-8">
