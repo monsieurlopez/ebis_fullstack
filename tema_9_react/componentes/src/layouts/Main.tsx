@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoReact from '../assets/react.svg';
-
+import { items } from '../data/items';
 import Formulario, { InputText, SubmitButton } from '../components/Formulario';
 import {
   CustomButton,
@@ -179,7 +179,7 @@ const Main: React.FC = () => {
 
       <h2 className="text-xl font-semibold mb-2">Tabla:</h2>
       <div className="max-w-md flex flex-wrap max-auto gap-2 min-w-200 justify-center">
-        <CreateTable />
+        <CreateTable items={items} />
       </div>
     </main>
   );

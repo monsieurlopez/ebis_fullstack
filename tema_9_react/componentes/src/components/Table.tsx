@@ -4,7 +4,7 @@ type CreateTableProps = {
   items: Product[];
 };
 
-export const CreateTable = () => {
+export const CreateTable = ({ items }: CreateTableProps) => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
@@ -183,10 +183,10 @@ export const CreateTable = () => {
               </div>
             </th>
             <th scope="col" className="px-6 py-3">
-              Product name
+              ID
             </th>
             <th scope="col" className="px-6 py-3">
-              Color
+              Name
             </th>
             <th scope="col" className="px-6 py-3">
               Category
@@ -195,91 +195,37 @@ export const CreateTable = () => {
               Price
             </th>
             <th scope="col" className="px-6 py-3">
-              Action
+              Model
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Brand
             </th>
           </tr>
         </thead>
         <tbody>
-          {[
-            {
-              id: 1,
-              name: 'Apple MacBook Pro 17"',
-              color: 'Silver',
-              category: 'Laptop',
-              price: '$2999',
-            },
-            {
-              id: 2,
-              name: 'Microsoft Surface Pro',
-              color: 'White',
-              category: 'Laptop PC',
-              price: '$1999',
-            },
-            {
-              id: 3,
-              name: 'Magic Mouse 2',
-              color: 'Black',
-              category: 'Accessories',
-              price: '$99',
-            },
-            {
-              id: 4,
-              name: 'Apple Watch',
-              color: 'Silver',
-              category: 'Accessories',
-              price: '$179',
-            },
-            {
-              id: 5,
-              name: 'iPad',
-              color: 'Gold',
-              category: 'Tablet',
-              price: '$699',
-            },
-            {
-              id: 6,
-              name: 'Apple iMac 27"',
-              color: 'Silver',
-              category: 'PC Desktop',
-              price: '$3999',
-            },
-          ].map(({ id, name, color, category, price }) => (
+          {items.map(({ id, name, category, price, model, brand }) => (
             <tr
               key={id}
-              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
               <td className="w-4 p-4">
                 <div className="flex items-center">
                   <input
-                    id={`checkbox-table-search-${id}`}
+                    id="checkbox-table-search-3"
                     type="checkbox"
                     className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   />
-                  <label
-                    htmlFor={`checkbox-table-search-${id}`}
-                    className="sr-only"
-                  >
+                  <label htmlFor="checkbox-table-search-3" className="sr-only">
                     checkbox
                   </label>
                 </div>
               </td>
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                {name}
-              </th>
-              <td className="px-6 py-4">{color}</td>
+              <td className="px-6 py-4">{id}</td>
+              <td className="px-6 py-4">{name}</td>
               <td className="px-6 py-4">{category}</td>
-              <td className="px-6 py-4">{price}</td>
-              <td className="px-6 py-4">
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Edit
-                </a>
-              </td>
+              <td className="px-6 py-4">${price}</td>
+              <td className="px-6 py-4">{model}</td>
+              <td className="px-6 py-4">{brand}</td>
             </tr>
           ))}
         </tbody>
