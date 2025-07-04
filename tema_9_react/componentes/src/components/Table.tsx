@@ -146,14 +146,17 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       </div>
 
       {/* Tabla */}
-      <table className="w-full max-h-96 text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center min-h-[200px]">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table className="w-full text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400 text-center min-h-[200px]">
+        <thead className="text-[10px] sm:text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th className="p-4">
+            <th className="p-2 sm:p-3 md:p-4">
               <input type="checkbox" className="w-4 h-4" />
             </th>
             {columns.map((col) => (
-              <th key={col} className="px-8 py-3">
+              <th
+                key={col}
+                className="px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] sm:text-xs md:text-sm"
+              >
                 {col}
               </th>
             ))}
@@ -165,7 +168,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
               key={index}
               className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
             >
-              <td className="w-4 p-4">
+              <td className="p-2 sm:p-3 md:p-4">
                 <input type="checkbox" className="w-4 h-4" />
               </td>
               {columns.map((col) => {
@@ -176,16 +179,19 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                   transactionDescriptions[rawCode] ?? 'Descripción desconocida';
 
                 return (
-                  <td key={col} className="px-8 py-4">
+                  <td
+                    key={col}
+                    className="px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] sm:text-xs md:text-sm"
+                  >
                     {col === 'transaction' ? (
-                      <div className="flex items-center justify-center">
+                      <div className="flex items-center justify-center gap-1 sm:gap-2">
                         <BadgeTrades type={group} />
                         <InfoIcon description={description} />
                       </div>
                     ) : col === 'document' ? (
                       <LinkButton url={value as string} />
                     ) : col === 'price' ? (
-                      `$${value ?? 0} `
+                      `$${value ?? 0}`
                     ) : value instanceof Date ? (
                       value.toLocaleDateString()
                     ) : (
