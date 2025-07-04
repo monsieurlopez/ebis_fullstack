@@ -45,8 +45,10 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         return d >= new Date(now.setDate(now.getDate() - 30));
       case 'currentYear':
         return d.getFullYear() === new Date().getFullYear();
-      case 'lastYear':
-        return d.getFullYear() === new Date().getFullYear() - 1;
+      case 'last365days':
+        const oneYearAgo = new Date();
+        oneYearAgo.setDate(now.getDate() - 365);
+        return d >= oneYearAgo;
       case 'all':
       default:
         return true;
@@ -144,7 +146,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       </div>
 
       {/* Tabla */}
-      <table className="w-full max-h-96 text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center">
+      <table className="w-full max-h-96 text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center min-h-[200px]">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="p-4">

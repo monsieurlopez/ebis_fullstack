@@ -7,7 +7,7 @@ export type DateFilterOption =
   | 'last7days'
   | 'last30days'
   | 'currentYear'
-  | 'lastYear';
+  | 'last365days';
 
 type FilterProps = {
   value: DateFilterOption;
@@ -19,8 +19,8 @@ const options: { label: string; value: DateFilterOption }[] = [
   { label: 'Today', value: 'today' },
   { label: 'Last 7 days', value: 'last7days' },
   { label: 'Last 30 days', value: 'last30days' },
+  { label: 'Last 365 days', value: 'last365days' },
   { label: 'Current year', value: 'currentYear' },
-  { label: 'Last year', value: 'lastYear' },
 ];
 
 export const DateFilter: React.FC<FilterProps> = ({ value, onChange }) => {
