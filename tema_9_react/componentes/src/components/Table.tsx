@@ -61,7 +61,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const endItem = Math.min(currentPage * pageSize, totalItems);
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 w-full lg:w-3/4 mx-auto px-2 sm:px-4 max-h-[600px]">
       <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
         <div>
           {/* Dropdown menu */}
@@ -226,7 +226,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       </div>
 
       {/* Tabla */}
-      <table className="w-full text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center">
+      <table className="w-full max-h-96 text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="p-4">
@@ -239,7 +239,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="overflow-y-auto">
           {paginatedItems.map((item, index) => (
             <tr
               key={index}
