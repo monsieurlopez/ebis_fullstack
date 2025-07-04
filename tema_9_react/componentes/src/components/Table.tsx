@@ -21,6 +21,14 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState<DateFilterOption>('all');
 
+  const getRowId = (item: InsiderTrade, index: number) => {
+    // Ideal: usa un campo único existente, por ejemplo 'document'
+    //if (item.document) return item.document;
+
+    // Si no hay campo único, concatena índice (puede causar problemas si el orden cambia)
+    return `row-${index}`;
+  };
+
   // Obtener las claves de los objetos para usarlas como headers
   const columns: (keyof InsiderTrade)[] = [
     'date',
@@ -163,45 +171,50 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
           </tr>
         </thead>
         <tbody className="overflow-y-auto">
-          {paginatedItems.map((item, index) => (
-            <tr
-              key={index}
-              className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-            >
-              <td className="p-2 sm:p-3 md:p-4">
-                <input type="checkbox" className="w-4 h-4" />
-              </td>
-              {columns.map((col) => {
-                const value = item[col as keyof typeof item];
-                const rawCode = item.transaction;
-                const group = transactionTypeGroup[rawCode] ?? 'Otro';
-                const description =
-                  transactionDescriptions[rawCode] ?? 'Descripción desconocida';
+          {paginatedItems.map((item, index) => {
+            const rowId = getRowId(item, index);
+            return (
+              <tr
+                key={rowId}
+                data-row-id={rowId}
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+              >
+                <td className="p-2 sm:p-3 md:p-4">
+                  <input type="checkbox" className="w-4 h-4" />
+                </td>
+                {columns.map((col) => {
+                  const value = item[col as keyof typeof item];
+                  const rawCode = item.transaction;
+                  const group = transactionTypeGroup[rawCode] ?? 'Otro';
+                  const description =
+                    transactionDescriptions[rawCode] ??
+                    'Descripción desconocida';
 
-                return (
-                  <td
-                    key={col}
-                    className="px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] sm:text-xs md:text-sm"
-                  >
-                    {col === 'transaction' ? (
-                      <div className="flex items-center justify-center gap-1 sm:gap-2">
-                        <BadgeTrades type={group} />
-                        <InfoIcon description={description} />
-                      </div>
-                    ) : col === 'document' ? (
-                      <LinkButton url={value as string} />
-                    ) : col === 'price' ? (
-                      `$${value ?? 0}`
-                    ) : value instanceof Date ? (
-                      value.toLocaleDateString()
-                    ) : (
-                      value
-                    )}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
+                  return (
+                    <td
+                      key={col}
+                      className="px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] sm:text-xs md:text-sm"
+                    >
+                      {col === 'transaction' ? (
+                        <div className="flex items-center justify-center gap-1 sm:gap-2">
+                          <BadgeTrades type={group} />
+                          <InfoIcon description={description} />
+                        </div>
+                      ) : col === 'document' ? (
+                        <LinkButton url={value as string} />
+                      ) : col === 'price' ? (
+                        `$${value ?? 0}`
+                      ) : value instanceof Date ? (
+                        value.toLocaleDateString()
+                      ) : (
+                        value
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
 
