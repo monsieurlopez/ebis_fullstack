@@ -19,9 +19,9 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
 
   // Obtener las claves de los objetos para usarlas como headers
   const columns: (keyof InsiderTrade)[] = [
+    'date',
     'name',
     'title',
-    'date',
     'transaction',
     'amount',
     'price',
