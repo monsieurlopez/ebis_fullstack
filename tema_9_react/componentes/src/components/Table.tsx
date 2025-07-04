@@ -29,13 +29,31 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   ];
 
   // Filtrar items según searchTerm buscando en todas las columnas (propiedades)
-  const filteredItems = items.filter((item) =>
-    columns.some((col) =>
-      String(item[col as keyof InsiderTrade])
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-    )
-  );
+  const filteredItems = items.filter((item) => {
+    return columns.some((col) => {
+      const rawValue = item[col];
+
+      if (col === 'transaction') {
+        const group =
+          transactionTypeGroup[item.transaction]?.toLowerCase() ?? '';
+        const description =
+          transactionDescriptions[item.transaction]?.toLowerCase() ?? '';
+        return (
+          group.includes(searchTerm.toLowerCase()) ||
+          description.includes(searchTerm.toLowerCase())
+        );
+      }
+
+      if (rawValue instanceof Date) {
+        return rawValue
+          .toLocaleDateString()
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      }
+
+      return String(rawValue).toLowerCase().includes(searchTerm.toLowerCase());
+    });
+  });
 
   const totalItems = filteredItems.length;
   const totalPages = Math.ceil(totalItems / pageSize);
@@ -265,7 +283,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                     ) : col === 'document' ? (
                       <LinkButton url={value as string} />
                     ) : col === 'price' ? (
-                      `$${value}`
+                      `$${value ?? 0} `
                     ) : value instanceof Date ? (
                       value.toLocaleDateString()
                     ) : (
