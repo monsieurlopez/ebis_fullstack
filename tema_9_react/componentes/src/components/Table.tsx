@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import type { InsiderTrade } from '../data/insider_trades';
 import { LinkButton } from '../components/LinkButton';
+import { InfoIcon } from '../components/InfoIcon';
+import { BadgeTrades } from '../components/BagdeTrades';
+import {
+  transactionTypeGroup,
+  transactionDescriptions,
+} from '../data/dic_trades';
 
 type CreateTableProps = {
   items: InsiderTrade[];
@@ -16,7 +22,6 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     'name',
     'title',
     'date',
-    'stock',
     'transaction',
     'amount',
     'price',
@@ -221,7 +226,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       </div>
 
       {/* Tabla */}
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <table className="w-full text-sm rtl:text-right text-gray-500 dark:text-gray-400 text-center">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="p-4">
@@ -245,10 +250,19 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
               </td>
               {columns.map((col) => {
                 const value = item[col as keyof typeof item];
+                const rawCode = item.transaction;
+                const group = transactionTypeGroup[rawCode] ?? 'Otro';
+                const description =
+                  transactionDescriptions[rawCode] ?? 'Descripción desconocida';
 
                 return (
                   <td key={col} className="px-8 py-4">
-                    {col === 'document' ? (
+                    {col === 'transaction' ? (
+                      <div className="flex items-center justify-center">
+                        <BadgeTrades type={group} />
+                        <InfoIcon description={description} />
+                      </div>
+                    ) : col === 'document' ? (
                       <LinkButton url={value as string} />
                     ) : col === 'price' ? (
                       `$${value}`

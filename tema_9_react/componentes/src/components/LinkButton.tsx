@@ -1,17 +1,16 @@
-import React from 'react';
 import icon from '../assets/Icons/link-out.svg';
 
-type LinkCustomButton = {
+type LinkCustomButtonProps = {
   width?: number;
   height?: number;
   title?: string;
   url: string;
 };
 
-export const LinkButton: React.FC<LinkCustomButton> = ({
+export const LinkButton: React.FC<LinkCustomButtonProps> = ({
   width = 20,
   height = 20,
-  title = 'Link',
+  title = 'Link a documento de la SEC',
   url = '#',
 }) => {
   return (
