@@ -1,4 +1,5 @@
 export type InsiderTrade = {
+  id: number;
   date: string | Date;
   stock: string;
   name: string;
@@ -11,6 +12,7 @@ export type InsiderTrade = {
 
 export const data: InsiderTrade[] = [
   {
+    id: 1,
     date: '2025-06-02',
     name: 'Pilz Torsten',
     title: 'Group President',
@@ -22,6 +24,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225016400\/xslF345X05\/form4.xml',
   },
   {
+    id: 2,
     date: '2025-06-02',
     name: 'Pilz Torsten',
     title: 'Group President',
@@ -33,6 +36,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225016400\/xslF345X05\/form4.xml',
   },
   {
+    id: 3,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -44,6 +48,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 4,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -55,6 +60,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 5,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -66,6 +72,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 6,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -77,6 +84,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 7,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -88,6 +96,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 8,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -99,6 +108,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 9,
     date: '2025-05-23',
     name: 'Banovetz John Patrick',
     title: 'Executive Vice President',
@@ -110,6 +120,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015583\/xslF345X05\/form4.xml',
   },
   {
+    id: 10,
     date: '2025-05-20',
     name: 'Rhodes Kevin H',
     title: 'EVP, Chief Legal Off & Secret',
@@ -121,6 +132,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015159\/xslF345X05\/form4.xml',
   },
   {
+    id: 11,
     date: '2025-05-20',
     name: 'Rhodes Kevin H',
     title: 'EVP, Chief Legal Off & Secret',
@@ -132,6 +144,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015159\/xslF345X05\/form4.xml',
   },
   {
+    id: 12,
     date: '2025-05-20',
     name: 'Rhodes Kevin H',
     title: 'EVP, Chief Legal Off & Secret',
@@ -143,6 +156,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225015159\/xslF345X05\/form4.xml',
   },
   {
+    id: 13,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -154,6 +168,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 14,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -165,6 +180,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 15,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -176,6 +192,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 16,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -187,6 +204,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 17,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -198,6 +216,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 18,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -209,6 +228,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 19,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -220,6 +240,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 20,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -231,6 +252,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 21,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -242,6 +264,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 22,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -253,6 +276,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 23,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -264,6 +288,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 24,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',
@@ -275,6 +300,7 @@ export const data: InsiderTrade[] = [
       'https:\/\/www.sec.gov\/Archives\/edgar\/data\/0000066740\/000112760225014808\/xslF345X05\/form4.xml',
   },
   {
+    id: 25,
     date: '2025-05-15',
     name: 'Dickson Zoe L',
     title: 'EVP & Chief HR Officer',

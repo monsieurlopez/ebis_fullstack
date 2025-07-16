@@ -21,12 +21,9 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState<DateFilterOption>('all');
 
-  const getRowId = (item: InsiderTrade, index: number) => {
-    // Ideal: usa un campo único existente, por ejemplo 'document'
-    //if (item.document) return item.document;
-
-    // Si no hay campo único, concatena índice (puede causar problemas si el orden cambia)
-    return `row-${index}`;
+  const getRowId = (item: InsiderTrade) => {
+    const idToString: string = item.id.toString();
+    return `row-${idToString}`;
   };
 
   // Obtener las claves de los objetos para usarlas como headers
@@ -171,8 +168,8 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
           </tr>
         </thead>
         <tbody className="overflow-y-auto">
-          {paginatedItems.map((item, index) => {
-            const rowId = getRowId(item, index);
+          {paginatedItems.map((item) => {
+            const rowId = getRowId(item);
             return (
               <tr
                 key={rowId}
@@ -201,7 +198,9 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                           <InfoIcon description={description} />
                         </div>
                       ) : col === 'document' ? (
-                        <LinkButton url={value as string} />
+                        <div className="flex items-center justify-center gap-1 sm:gap-2">
+                          <LinkButton url={value as string} />
+                        </div>
                       ) : col === 'price' ? (
                         `$${value ?? 0}`
                       ) : value instanceof Date ? (
