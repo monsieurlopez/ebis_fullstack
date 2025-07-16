@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { InsiderTrade } from '../data/insider_trades';
 import { LinkButton } from '../components/LinkButton';
 import { InfoIcon } from '../components/InfoIcon';
@@ -20,13 +20,15 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState<DateFilterOption>('all');
+  const [rowSelection, setRowSelection] = useState<string[]>([]);
 
+  //* Función para obtener el id de cada fila *//
   const getRowId = (item: InsiderTrade) => {
     const idToString: string = item.id.toString();
     return `row-${idToString}`;
   };
 
-  // Obtener las claves de los objetos para usarlas como headers
+  //* Obtener las claves de los objetos para usarlas como headers *//
   const columns: (keyof InsiderTrade)[] = [
     'date',
     'name',
@@ -37,6 +39,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     'document',
   ];
 
+  //* Filtrar items según dateFilter *//
   const isInDateRange = (date: Date): boolean => {
     const now = new Date();
     const d = new Date(date);
@@ -60,7 +63,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     }
   };
 
-  // Filtrar items según searchTerm buscando en todas las columnas (propiedades)
+  //* Filtrar items según searchTerm buscando en todas las columnas (propiedades) *//
   const filteredItems = items
     .filter((item) => isInDateRange(new Date(item.date)))
     .filter((item) => {
@@ -91,6 +94,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       });
     });
 
+  //* Manejador de cambio de páginas *//
   const totalItems = filteredItems.length;
   const totalPages = Math.ceil(totalItems / pageSize);
 
@@ -100,7 +104,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     }
   };
 
-  // Resetea la página a 1 cuando cambia la búsqueda
+  // Resetea la página a 1 cuando cambia la búsqueda //
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     setCurrentPage(1);
@@ -113,6 +117,36 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
 
   const startItem = (currentPage - 1) * pageSize + 1;
   const endItem = Math.min(currentPage * pageSize, totalItems);
+
+  //* Selección de filas individuales *//
+  const handleCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    rowId: string
+  ) => {
+    const isChecked = e.target.checked;
+
+    setRowSelection((prev) =>
+      isChecked ? [...prev, rowId] : prev.filter((id) => id !== rowId)
+    );
+  };
+
+  //* Selección de todas las filas disponibles *//
+  const checkAll = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = e.target.checked;
+    const allIds = filteredItems.map(getRowId);
+
+    setRowSelection((prevSelected) => {
+      if (isChecked) {
+        return Array.from(new Set([...prevSelected, ...allIds]));
+      } else {
+        return prevSelected.filter((id) => !allIds.includes(id));
+      }
+    });
+  };
+
+  useEffect(() => {
+    console.log(rowSelection);
+  }, [rowSelection]);
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 w-full lg:w-3/4 mx-auto px-2 sm:px-4 max-h-[600px]">
@@ -155,7 +189,17 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         <thead className="text-[10px] sm:text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="p-2 sm:p-3 md:p-4">
-              <input type="checkbox" className="w-4 h-4" />
+              <input
+                type="checkbox"
+                className="w-4 h-4"
+                checked={
+                  filteredItems.length > 0 &&
+                  filteredItems.every((item) =>
+                    rowSelection.includes(getRowId(item))
+                  )
+                }
+                onChange={checkAll}
+              />
             </th>
             {columns.map((col) => (
               <th
@@ -177,7 +221,12 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                 className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
                 <td className="p-2 sm:p-3 md:p-4">
-                  <input type="checkbox" className="w-4 h-4" />
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4"
+                    checked={rowSelection.includes(rowId)}
+                    onChange={(e) => handleCheckboxChange(e, rowId)}
+                  />
                 </td>
                 {columns.map((col) => {
                   const value = item[col as keyof typeof item];
