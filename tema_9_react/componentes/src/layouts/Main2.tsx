@@ -1,6 +1,7 @@
 import React from 'react';
-import { data } from '../data/insider_trades';
+//import { data } from '../data/insider_trades';
 import { CreateTable, CardCompany } from '../components/indexComponets';
+import { data } from '../data/data';
 
 const Main2: React.FC = () => {
   const logo = 'https://logo.clearbit.com/apple.com';
@@ -16,7 +17,7 @@ const Main2: React.FC = () => {
           cik={'0000754'}
           sector="Technology"
         />
-        <CreateTable items={data} pageSize={10} />
+        <CreateTable items={data} pageSize={20} />
       </div>
     </main>
   );

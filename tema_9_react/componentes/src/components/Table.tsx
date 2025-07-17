@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import type { InsiderTrade } from '../data/insider_trades';
+//import type { InsiderTrade } from '../data/insider_trades';
+import type { DataType } from '../data/data';
 import { LinkButton } from '../components/LinkButton';
 import { InfoIcon } from '../components/InfoIcon';
 import { BadgeTrades } from '../components/BagdeTrades';
 import type { DateFilterOption } from '../components/DateFilter';
 import { DateFilter } from '../components/DateFilter';
+import { data } from '../data/data';
 
 import {
   transactionTypeGroup,
@@ -12,7 +14,7 @@ import {
 } from '../data/dic_trades';
 
 type CreateTableProps = {
-  items: InsiderTrade[];
+  items: DataType[];
   pageSize?: number;
 };
 
@@ -23,13 +25,15 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const [rowSelection, setRowSelection] = useState<string[]>([]);
 
   //* Función para obtener el id de cada fila *//
-  const getRowId = (item: InsiderTrade) => {
-    const idToString: string = item.id.toString();
-    return `row-${idToString}`;
+  const getRowId = (item: DataType) => {
+    //const idToString: string = item.id.toString();
+    //return `row-${idToString}`;
+    const idRow = item.id.split('-').join('');
+    return `row-${idRow}`;
   };
 
   //* Obtener las claves de los objetos para usarlas como headers *//
-  const columns: (keyof InsiderTrade)[] = [
+  const columns: (keyof DataType)[] = [
     'date',
     'name',
     'transaction',
@@ -83,7 +87,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
         if (col === 'name') {
           return (
             item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+            item.officer_title.toLowerCase().includes(searchTerm.toLowerCase())
           );
         }
 
@@ -151,11 +155,12 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   };
 
   useEffect(() => {
+    console.log(data);
     console.log(rowSelection);
   }, [rowSelection]);
 
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 w-full lg:w-3/4 mx-auto px-2 sm:px-4 max-h-[600px]">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 w-full lg:w-3/4 mx-auto px-2 sm:px-4 max-h-[700px]">
       <div className="flex flex-col sm:flex-row flex-wrap space-y-4 sm:space-y-0 items-center justify-between pb-4">
         {/*Dropdown de filtrar */}
         <DateFilter value={dateFilter} onChange={setDateFilter} />
@@ -191,7 +196,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
       </div>
 
       {/* Tabla */}
-      <table className="w-full text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400 text-center min-h-[200px]">
+      <table className="w-full text-[10px] sm:text-xs md:text-sm text-gray-500 dark:text-gray-400 text-center min-h-[250px]">
         <thead className="text-[10px] sm:text-xs uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th className="p-2 sm:p-3 md:p-4">
@@ -248,27 +253,83 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                       className="px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-3 text-[10px] sm:text-xs md:text-sm"
                     >
                       {col === 'transaction' ? (
-                        <div className="flex items-center justify-center gap-1 sm:gap-2">
-                          <BadgeTrades type={group} />
+                        <div className="flex items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
+                          <BadgeTrades
+                            type={
+                              group === 'Compra'
+                                ? 'Compra'
+                                : group === 'Venta'
+                                  ? 'Venta'
+                                  : 'Otro'
+                            }
+                          />
                           <InfoIcon description={description} />
                         </div>
                       ) : col === 'document' ? (
-                        <div className="flex items-center justify-center gap-1 sm:gap-2">
+                        <div className="flex items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
                           <LinkButton url={value as string} />
                         </div>
+                      ) : col === 'amount' ? (
+                        (() => {
+                          const { amount, shares_owned_following_transaction } =
+                            item;
+                          const isBuy = group === 'Compra';
+                          const isSell = group === 'Venta';
+
+                          if (!isBuy && !isSell) {
+                            return (
+                              <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-semibold">
+                                {amount}
+                              </span>
+                            );
+                          }
+
+                          const previousShares = isSell
+                            ? shares_owned_following_transaction + amount
+                            : shares_owned_following_transaction - amount;
+
+                          const changePercent =
+                            previousShares > 0
+                              ? ((amount / previousShares) * 100).toFixed(3)
+                              : '0.000';
+
+                          const arrow = isBuy ? '▲' : '▼';
+                          const colorClass = isBuy
+                            ? 'text-green-600'
+                            : 'text-red-600';
+
+                          return (
+                            <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
+                              <span className="font-semibold text-gray-600">
+                                {amount}
+                              </span>
+                              <span
+                                className={`italic flex items-center whitespace-nowrap gap-1 ${colorClass}`}
+                              >
+                                {arrow} {changePercent}%
+                              </span>
+                            </div>
+                          );
+                        })()
                       ) : col === 'name' ? (
-                        <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
-                          <span className="text-sm text-gray-600 font-semibold">
+                        <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
+                          <span className="font-semibold text-gray-600">
                             {item.name}
                           </span>
-                          <span className="italic text-xs">{item.title}</span>
+                          <span className="italic text-[9px] sm:text-[11px] md:text-xs">
+                            {item.officer_title}
+                          </span>
                         </div>
                       ) : col === 'price' ? (
-                        `$${value ?? 0}`
+                        <span className="text-[10px] sm:text-xs md:text-sm">
+                          ${Number(value ?? 0).toFixed(2)}
+                        </span>
                       ) : value instanceof Date ? (
                         value.toLocaleDateString()
                       ) : (
-                        value
+                        <span className="text-[10px] sm:text-xs md:text-sm">
+                          {value}
+                        </span>
                       )}
                     </td>
                   );
