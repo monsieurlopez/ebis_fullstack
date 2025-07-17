@@ -80,6 +80,13 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
           );
         }
 
+        if (col === 'name') {
+          return (
+            item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+        }
+
         if (rawValue instanceof Date) {
           return rawValue
             .toLocaleDateString()
@@ -251,7 +258,9 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                         </div>
                       ) : col === 'name' ? (
                         <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
-                          <span className="text-sm font-semibold">{item.name}</span>
+                          <span className="text-sm text-gray-600 font-semibold">
+                            {item.name}
+                          </span>
                           <span className="italic text-xs">{item.title}</span>
                         </div>
                       ) : col === 'price' ? (
