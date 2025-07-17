@@ -8,3 +8,4 @@ export { Notificacion } from './Notificacion';
 export { EstadoTarea } from './EstadoTarea';
 export { ListaTareas } from './ListaTareas';
 export { CreateTable } from './Table';
+export { CardCompany } from './CardCompany';

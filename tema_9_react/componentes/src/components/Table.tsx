@@ -32,7 +32,6 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
   const columns: (keyof InsiderTrade)[] = [
     'date',
     'name',
-    'title',
     'transaction',
     'amount',
     'price',
@@ -249,6 +248,11 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                       ) : col === 'document' ? (
                         <div className="flex items-center justify-center gap-1 sm:gap-2">
                           <LinkButton url={value as string} />
+                        </div>
+                      ) : col === 'name' ? (
+                        <div className="flex flex-col items-center justify-center gap-1 sm:gap-2">
+                          <span className="text-sm font-semibold">{item.name}</span>
+                          <span className="italic text-xs">{item.title}</span>
                         </div>
                       ) : col === 'price' ? (
                         `$${value ?? 0}`
