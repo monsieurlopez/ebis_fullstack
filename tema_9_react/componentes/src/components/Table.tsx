@@ -6,7 +6,7 @@ import { InfoIcon } from '../components/InfoIcon';
 import { BadgeTrades } from '../components/BagdeTrades';
 import type { DateFilterOption } from '../components/DateFilter';
 import { DateFilter } from '../components/DateFilter';
-import { data } from '../data/data';
+//import { data } from '../data/data';
 
 import {
   transactionTypeGroup,
@@ -154,8 +154,20 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
     });
   };
 
+  //* Función para formatear el amount *//
+  function formatAmount(value: number): string {
+    if (value < 1000000) {
+      return value.toLocaleString('en-US');
+    }
+
+    const millions = Math.floor(value / 1000000);
+    const rest = value % 1000000;
+
+    return `${millions.toLocaleString('en-US').replace(/,/g, ' ')} ${rest.toLocaleString('en-US')}`;
+  }
+
   useEffect(() => {
-    console.log(data);
+    //console.log(data);
     console.log(rowSelection);
   }, [rowSelection]);
 
@@ -301,7 +313,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
                           return (
                             <div className="flex flex-col items-center justify-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm">
                               <span className="font-semibold text-gray-600">
-                                {amount}
+                                {formatAmount(amount)}
                               </span>
                               <span
                                 className={`italic flex items-center whitespace-nowrap gap-1 ${colorClass}`}
