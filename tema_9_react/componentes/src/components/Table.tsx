@@ -15,10 +15,15 @@ import {
 
 type CreateTableProps = {
   items: DataType[];
+  company: number;
   pageSize?: number;
 };
 
-export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
+export const CreateTable = ({
+  items,
+  pageSize = 10,
+  company,
+}: CreateTableProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState<DateFilterOption>('all');
@@ -68,6 +73,7 @@ export const CreateTable = ({ items, pageSize = 10 }: CreateTableProps) => {
 
   //* Filtrar items según searchTerm buscando en todas las columnas (propiedades) *//
   const filteredItems = items
+    .filter((item) => item.firm_cik === company)
     .filter((item) => isInDateRange(new Date(item.date)))
     .filter((item) => {
       return columns.some((col) => {

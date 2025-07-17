@@ -28,7 +28,7 @@ export const SelectCompany: React.FC<SelectCompanyProps> = ({
 
   return (
     <select
-      className="p-2 border rounded text-center"
+      className="p-2 border rounded text-center min-w-86"
       name="companies"
       onChange={handleChange}
     >
@@ -71,7 +71,11 @@ const Main2: React.FC = () => {
           symbol={selectedCompany.firm_ticker}
           cik={selectedCompany.firm_cik}
         />
-        <CreateTable items={data} pageSize={20} />
+        <CreateTable
+          items={data}
+          pageSize={20}
+          company={selectedCompany.firm_cik}
+        />
       </div>
     </main>
   );
