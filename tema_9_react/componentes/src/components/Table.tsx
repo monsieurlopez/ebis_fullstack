@@ -6,7 +6,6 @@ import { InfoIcon } from '../components/InfoIcon';
 import { BadgeTrades } from '../components/BagdeTrades';
 import type { DateFilterOption } from '../components/DateFilter';
 import { DateFilter } from '../components/DateFilter';
-//import { data } from '../data/data';
 
 import {
   transactionTypeGroup,
@@ -31,8 +30,6 @@ export const CreateTable = ({
 
   //* Función para obtener el id de cada fila *//
   const getRowId = (item: DataType) => {
-    //const idToString: string = item.id.toString();
-    //return `row-${idToString}`;
     const idRow = item.id.split('-').join('');
     return `row-${idRow}`;
   };
@@ -74,6 +71,7 @@ export const CreateTable = ({
   //* Filtrar items según searchTerm buscando en todas las columnas (propiedades) *//
   const filteredItems = items
     .filter((item) => item.firm_cik === company)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .filter((item) => isInDateRange(new Date(item.date)))
     .filter((item) => {
       return columns.some((col) => {
@@ -173,7 +171,6 @@ export const CreateTable = ({
   }
 
   useEffect(() => {
-    //console.log(data);
     console.log(rowSelection);
   }, [rowSelection]);
 
